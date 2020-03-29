@@ -1,6 +1,4 @@
-package com.example.zeyin.algorithm.Array;
-
-import org.springframework.stereotype.Service;
+package com.example.zeyin.algorithm.array;
 
 import java.util.ArrayList;
 import java.util.Arrays;
