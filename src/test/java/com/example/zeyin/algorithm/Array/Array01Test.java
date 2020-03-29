@@ -14,7 +14,7 @@ import org.springframework.test.context.junit4.SpringRunner;
  */
 @SpringBootTest
 @Slf4j
-public class ArrayTest {
+public class Array01Test {
 
     /**
      * @Description: 数组测试
@@ -25,8 +25,7 @@ public class ArrayTest {
      */
     @Test
     public void ArrayTest() {
-        Array wArray = new Array();
-        wArray.Array1();
-        log.info("日志打印成功");
+        int[] array1={1,2,3,4,5,7,6,4,2};
+        System.out.println(Array01.duplicate(array1));
     }
 }
