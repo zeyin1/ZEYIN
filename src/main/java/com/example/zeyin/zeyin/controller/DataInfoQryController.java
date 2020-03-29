@@ -1,5 +1,6 @@
 package com.example.zeyin.zeyin.controller;
 
+import com.example.zeyin.zeyin.errorcode.ErrorEnum;
 import com.example.zeyin.zeyin.pojo.RamZeyInt;
 import com.example.zeyin.zeyin.service.DataInfoQryService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,12 +31,12 @@ public class DataInfoQryController {
     @RequestMapping("qryDataInfo")
     public RamZeyInt qryDataInfo(String pTest1) throws Exception {
         if (StringUtils.isEmpty(pTest1)){
-            throw new Exception("输入字段为空");
+            throw new Exception(ErrorEnum.ERR001.getCode());
         }
 
         RamZeyInt wRamZeyInt =mDataInfoQryService.qryDataInfo(pTest1);
         if (wRamZeyInt==null){
-            throw new Exception("返回结果为空");
+            throw new Exception(ErrorEnum.ERR002.getCode());
         }
         return wRamZeyInt;
     }
