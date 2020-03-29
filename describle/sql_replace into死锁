@@ -1,0 +1,2 @@
+replace into不能保证地址是顺序执行，可能会出现相互等待的状态，产生死锁。
+利用insert into 可以解决replace into的死锁问题
