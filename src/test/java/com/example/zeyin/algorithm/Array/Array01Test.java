@@ -2,9 +2,7 @@ package com.example.zeyin.algorithm.Array;
 
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
-import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.context.junit4.SpringRunner;
 
 /**
  * @Discription: 数组测试类
@@ -25,7 +23,10 @@ public class Array01Test {
      */
     @Test
     public void ArrayTest() {
-        int[] array1={1,2,3,4,5,7,6,4,2};
-        System.out.println(Array01.duplicate(array1));
+        int[] array1={1,2,3,4,5,7,6,4,2,2};
+        System.out.println("----测试1-----------");
+        System.out.println(Array01.duplicate01(array1));
+        System.out.println("----测试2-----------");
+        System.out.println(Array01.duplicate02(array1));
     }
 }
