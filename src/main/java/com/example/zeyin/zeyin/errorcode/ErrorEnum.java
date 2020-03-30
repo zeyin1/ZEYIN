@@ -7,25 +7,25 @@ package com.example.zeyin.zeyin.errorcode;
  * @Modify:
  */
 
-public enum  ErrorEnum {
+public enum ErrorEnum {
 
-    ERR001("ERR001","输入报错"),
-    ERR002("ERR002","输出报错"),
+    ERR001("ERR001", "输入报错"),
+    ERR002("ERR002", "输出报错"),
 
     ;
     private String code;
     private String message;
 
-    ErrorEnum (String code,String message){
-        this.code=code;
-        this.message=message;
+    ErrorEnum(String code, String message) {
+        this.code = code;
+        this.message = message;
     }
 
-    public String getCode(){
-        return code;
+    public String getCode() {
+        return this.code;
     }
 
-    public String getMessage(){
-        return message;
+    public String getMessage() {
+        return this.message;
     }
 }
