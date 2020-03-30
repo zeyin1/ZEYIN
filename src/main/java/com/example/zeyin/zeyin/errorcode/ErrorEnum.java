@@ -1,5 +1,7 @@
 package com.example.zeyin.zeyin.errorcode;
 
+import org.springframework.util.StringUtils;
+
 /**
  * @Description: 测试枚举
  * @Author: zeyin
@@ -19,6 +21,15 @@ public enum ErrorEnum {
     ErrorEnum(String code, String message) {
         this.code = code;
         this.message = message;
+    }
+
+    public static ErrorEnum parse(String code) throws Exception {
+        for(ErrorEnum errorEnum:values()){
+            if(errorEnum.code.equals(code)){
+                return errorEnum;
+            }
+        }
+        throw new Exception("错误");
     }
 
     public String getCode() {
