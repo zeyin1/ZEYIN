@@ -1,8 +1,9 @@
 package com.example.zeyin.zeyin.mapper;
 
-import com.example.zeyin.zeyin.pojo.RamZeyInt;
+import com.example.zeyin.zeyin.pojo.RamMidStu;
 
-import org.springframework.stereotype.Service;
+import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
 
 /**
  * @Description: 数据实体Mapper
@@ -10,8 +11,8 @@ import org.springframework.stereotype.Service;
  * @Date: 2020年03月29日 23:13:32
  * @Modify:
  */
-@Service
-public interface RamZeyIntMapper {
+@Mapper
+public interface RamMidStuMapper {
 
     /**
      * @Description: 查询数据
@@ -21,5 +22,5 @@ public interface RamZeyIntMapper {
      * @Param:
      * @Return:
      */
-    RamZeyInt qryRamZeyIntByTest1(String pTest1);
+    RamMidStu qryRamMidStuByStuNam(@Param("pStuNam") String pStuNam);
 }

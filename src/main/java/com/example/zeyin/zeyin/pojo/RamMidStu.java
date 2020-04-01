@@ -9,13 +9,13 @@ import lombok.Data;
  * @Modify:
  */
 @Data
-public class RamZeyInt {
+public class RamMidStu {
     /**
-     * 测试字段1
+     * 学生姓名
      */
-    private String test1;
+    private String stuNam;
     /**
-     * 测试字段2
+     * 学生学号
      */
-    private String test2;
+    private String stuNum;
 }

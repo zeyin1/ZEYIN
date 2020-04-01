@@ -1,7 +1,7 @@
 package com.example.zeyin.zeyin.service.impl;
 
-import com.example.zeyin.zeyin.mapper.RamZeyIntMapper;
-import com.example.zeyin.zeyin.pojo.RamZeyInt;
+import com.example.zeyin.zeyin.mapper.RamMidStuMapper;
+import com.example.zeyin.zeyin.pojo.RamMidStu;
 import com.example.zeyin.zeyin.service.DataInfoQryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -16,7 +16,7 @@ import org.springframework.stereotype.Service;
 public class DataInfoQryServiceImpl implements DataInfoQryService {
 
     @Autowired
-    private RamZeyIntMapper mRamZeyIntMapper;
+    private RamMidStuMapper mRamMidStuMapper;
     /**
     * @Description: 测试实现类
     * @Author: zeyin
@@ -26,7 +26,7 @@ public class DataInfoQryServiceImpl implements DataInfoQryService {
     * @Return:
     */
     @Override
-    public RamZeyInt qryDataInfo(String test1) {
-        return mRamZeyIntMapper.qryRamZeyIntByTest1(test1);
+    public RamMidStu qryDataInfo(String pStuNam) {
+        return mRamMidStuMapper.qryRamMidStuByStuNam(pStuNam);
     }
 }

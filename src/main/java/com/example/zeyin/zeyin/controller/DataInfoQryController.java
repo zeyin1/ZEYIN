@@ -1,7 +1,7 @@
 package com.example.zeyin.zeyin.controller;
 
 import com.example.zeyin.zeyin.errorcode.ErrorEnum;
-import com.example.zeyin.zeyin.pojo.RamZeyInt;
+import com.example.zeyin.zeyin.pojo.RamMidStu;
 import com.example.zeyin.zeyin.service.DataInfoQryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.util.StringUtils;
@@ -29,15 +29,15 @@ public class DataInfoQryController {
     * @Return:
     */
     @RequestMapping("qryDataInfo")
-    public RamZeyInt qryDataInfo(String pTest1) throws Exception {
-        if (StringUtils.isEmpty(pTest1)){
+    public RamMidStu qryDataInfo(String pStuNam) throws Exception {
+        if (StringUtils.isEmpty(pStuNam)){
             throw new Exception(ErrorEnum.ERR001.getCode());
         }
 
-        RamZeyInt wRamZeyInt =mDataInfoQryService.qryDataInfo(pTest1);
-        if (wRamZeyInt==null){
+        RamMidStu wRamMidStu =mDataInfoQryService.qryDataInfo(pStuNam);
+        if (wRamMidStu ==null){
             throw new Exception(ErrorEnum.ERR002.getCode());
         }
-        return wRamZeyInt;
+        return wRamMidStu;
     }
 }

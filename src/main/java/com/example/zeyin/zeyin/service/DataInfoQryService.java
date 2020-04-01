@@ -1,6 +1,6 @@
 package com.example.zeyin.zeyin.service;
 
-import com.example.zeyin.zeyin.pojo.RamZeyInt;
+import com.example.zeyin.zeyin.pojo.RamMidStu;
 
 /**
  * @Description: 测试service接口
@@ -18,5 +18,5 @@ public interface DataInfoQryService {
     * @Param:
     * @Return:
     */
-    RamZeyInt qryDataInfo(String test1);
+    RamMidStu qryDataInfo(String test1);
 }

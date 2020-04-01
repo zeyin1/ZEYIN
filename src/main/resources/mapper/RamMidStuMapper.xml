@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.example.zeyin.zeyin.mapper.RamMidStuMapper">
+    <resultMap id="RamMidStuMap" type="com.example.zeyin.zeyin.pojo.RamMidStu">
+        <result column="STU_NAM" jdbcType="CHAR" property="stuNam"/>
+        <result column="STU_NUM" jdbcType="CHAR" property="stuNum"/>
+    </resultMap>
+    <sql id="RamMidStuColumn">
+        STU_NAM,
+        STU_NUM
+    </sql>
+
+    <select id="qryRamMidStuByStuNam" resultMap="RamMidStuMap">
+        select
+        <include refid="RamMidStuColumn"/>
+        from
+        ZEYIN.RAM_ZEY_INT
+        where STU_NAM=#{pStuNam}
+    </select>
+
+</mapper>
