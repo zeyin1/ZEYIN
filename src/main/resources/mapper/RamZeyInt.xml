@@ -1,15 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.example.zeyin.zeyin.mapper.RamZeyIntMapper">
+    <resultMap id="RamZeyIntMap" type="com.example.zeyin.zeyin.pojo.RamZeyInt">
+        <result column="TEST1" jdbcType="CHAR" property="test1"/>
+        <result column="TEST2" jdbcType="CHAR" property="test2"/>
+    </resultMap>
+    <sql id="RamZeyIntColumn">
+        TEST1,
+        TEST2
+    </sql>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+    <select id="qryRamZeyIntByTest1" resultMap="RamZeyIntMap">
+        select
+        <include refid="RamZeyIntColumn">
+        from
+        RAM_ZEY_INT
+        where TEST1=#{pTest1}
+    </select>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="mapper.RamZeyInt"
-            prefHeight="400.0" prefWidth="600.0">
-
-
-</AnchorPane>
+</mapper>
