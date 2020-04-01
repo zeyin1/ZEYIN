@@ -1,7 +1,6 @@
 package com.example.zeyin.zeyin.mapper;
 
 import com.example.zeyin.zeyin.pojo.RamZeyInt;
-
 import org.springframework.stereotype.Service;
 
 /**
@@ -11,7 +10,7 @@ import org.springframework.stereotype.Service;
  * @Modify:
  */
 @Service
-public interface RamZeyIntMapper {
+public class RamZeyIntMapperImpl implements RamZeyIntMapper {
 
     /**
      * @Description: 查询数据
@@ -21,5 +20,8 @@ public interface RamZeyIntMapper {
      * @Param:
      * @Return:
      */
-    RamZeyInt qryRamZeyIntByTest1(String pTest1);
+    @Override
+    public RamZeyInt qryRamZeyIntByTest1(String pTest1) {
+        return new RamZeyInt();
+    }
 }
