@@ -22,5 +22,5 @@ public interface RamMidStuMapper {
      * @Param:
      * @Return:
      */
-    RamMidStu qryRamMidStuByStuNam(@Param("pStuNam") String pStuNam);
+    RamMidStu qryRamMidStuByStuNam(@Param("stuNam") String stuNam);
 }

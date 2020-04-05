@@ -12,10 +12,10 @@
 
     <select id="qryRamMidStuByStuNam" resultMap="RamMidStuMap">
         select
-        <include refid="RamMidStuColumn"/>
+      <include refid="RamMidStuColumn"/>
         from
-        ZEYIN.RAM_ZEY_INT
-        where STU_NAM=#{pStuNam}
+        RAM_MID_STU t
+        where t.STU_NAM=#{stuNam}
     </select>
 
 </mapper>
