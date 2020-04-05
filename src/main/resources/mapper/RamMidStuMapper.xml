@@ -4,18 +4,30 @@
     <resultMap id="RamMidStuMap" type="com.example.zeyin.zeyin.pojo.RamMidStu">
         <result column="STU_NAM" jdbcType="CHAR" property="stuNam"/>
         <result column="STU_NUM" jdbcType="CHAR" property="stuNum"/>
+        <result column="STU_SCO" jdbcType="DECIMAL" property="stuSco"/>
+        <result column="STU_SUB" jdbcType="CHAR" property="stuSub"/>
+        <result column="STU_SEX" jdbcType="CHAR" property="stuSex"/>
     </resultMap>
     <sql id="RamMidStuColumn">
         STU_NAM,
-        STU_NUM
+        STU_NUM,
+        STU_SCO,
+        STU_SUB,
+        STU_SEX
     </sql>
 
-    <select id="qryRamMidStuByStuNam" resultMap="RamMidStuMap">
+    <select id="getRamMidStuInfo" resultMap="RamMidStuMap">
         select
-      <include refid="RamMidStuColumn"/>
-        from
-        RAM_MID_STU t
-        where t.STU_NAM=#{stuNam}
+        <include refid="RamMidStuColumn"/>
+        from RAM_MID_STU
+        where trim(STU_NAM)=#{pStuNam}
+    </select>
+
+    <select id="getStudentScore" resultType="java.lang.String">
+        select
+        STU_SCO
+        from RAM_MID_STU
+        where trim(STU_NAM)=#{pStuNam}
     </select>
 
 </mapper>

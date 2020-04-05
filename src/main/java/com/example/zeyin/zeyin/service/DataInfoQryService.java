@@ -18,5 +18,5 @@ public interface DataInfoQryService {
     * @Param:
     * @Return:
     */
-    RamMidStu qryDataInfo(String test1);
+    RamMidStu qryDataInfo(String pStuNam);
 }

@@ -13,14 +13,24 @@ import org.apache.ibatis.annotations.Param;
  */
 @Mapper
 public interface RamMidStuMapper {
-
     /**
-     * @Description: 查询数据
+     * @Description: 根据学生姓名查询学生信息
      * @Author: zeyin
-     * @Date: 2020/3/29 23:14
+     * @Date: 2020/4/5 13:52
      * @Modify:
      * @Param:
      * @Return:
      */
-    RamMidStu qryRamMidStuByStuNam(@Param("stuNam") String stuNam);
+
+    RamMidStu getRamMidStuInfo(@Param("pStuNam") String pStuNam);
+
+    /**
+     * @Description: 查询学生分数
+     * @Author: zeyin
+     * @Date: 2020/4/5 14:23
+     * @Modify:
+     * @Param:
+     * @Return:
+     */
+    String getStudentScore(@Param("pStuNam") String pStuNam);
 }

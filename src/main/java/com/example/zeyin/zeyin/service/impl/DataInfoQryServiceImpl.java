@@ -27,6 +27,6 @@ public class DataInfoQryServiceImpl implements DataInfoQryService {
     */
     @Override
     public RamMidStu qryDataInfo(String pStuNam) {
-        return mRamMidStuMapper.qryRamMidStuByStuNam(pStuNam);
+        return mRamMidStuMapper.getRamMidStuInfo(pStuNam);
     }
 }

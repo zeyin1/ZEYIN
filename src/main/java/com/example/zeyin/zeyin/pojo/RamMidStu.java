@@ -2,6 +2,8 @@ package com.example.zeyin.zeyin.pojo;
 
 import lombok.Data;
 
+import java.math.BigDecimal;
+
 /**
  * @Description: 测试数据表的实体类
  * @Author: zeyin
@@ -11,11 +13,23 @@ import lombok.Data;
 @Data
 public class RamMidStu {
     /**
-     * 学生姓名
+     * 姓名
      */
     private String stuNam;
     /**
-     * 学生学号
+     * 学号
      */
     private String stuNum;
+    /**
+     * 分数
+     */
+    private BigDecimal stuSco;
+    /**
+     * 学科
+     */
+    private String stuSub;
+    /**
+     * 性别
+     */
+    private String stuSex;
 }

@@ -28,7 +28,7 @@ public class DataInfoQryServiceTest {
     */
     @Test
     public void test(){
-        String stuNam="zeyin1";
+        String stuNam="张三";
         RamMidStu ramMidStu =mDataInfoQryService.qryDataInfo(stuNam);
         System.out.println(ramMidStu);
     }
