@@ -69,4 +69,25 @@ public class Array01 {
         return wArrayReturn;
     }
 
+    /**
+    * @Description: 去除数组重复的元素,找到重复元素的索
+    * @Author: zeyin
+    * @Date: 2020/4/5 17:10
+    * @Modify:
+    * @Param:
+    * @Return:
+    */
+    public static int removeDuplicates(int[] wSrcArray){
+        int i=0;
+        for(int  wNum:wSrcArray){
+            if((i==0) ||(wNum!=wSrcArray[i-1])){
+                wSrcArray[i]=wNum;
+                ++i;
+            }else {
+                return wSrcArray[i];
+            }
+        }
+        return 0;
+    }
+
 }
