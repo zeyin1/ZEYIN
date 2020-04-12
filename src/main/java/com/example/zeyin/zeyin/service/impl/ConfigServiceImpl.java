@@ -3,7 +3,9 @@ package com.example.zeyin.zeyin.service.impl;
 import com.example.zeyin.util.SpringApplicationContextHelper;
 import com.example.zeyin.zeyin.config.Config1;
 import com.example.zeyin.zeyin.config.Config2;
+import com.example.zeyin.zeyin.abst.AbstService;
 import com.example.zeyin.zeyin.service.ConfigService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 /**
@@ -14,6 +16,7 @@ import org.springframework.stereotype.Service;
  */
 @Service
 public class ConfigServiceImpl implements ConfigService {
+
     /**
     * @Description: todo 用一句话描述
     * @Author: zeyin
