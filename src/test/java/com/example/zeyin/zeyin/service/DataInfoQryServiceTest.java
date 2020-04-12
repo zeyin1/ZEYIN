@@ -1,4 +1,4 @@
-package com.example.zeyin.zeyin;
+package com.example.zeyin.zeyin.service;
 
 import com.example.zeyin.zeyin.mapper.RamMidStuMapper;
 import com.example.zeyin.zeyin.pojo.RamMidStu;

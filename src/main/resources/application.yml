@@ -13,3 +13,9 @@ spring:
 #mybatis
 mybatis:
   mapper-locations: classpath:mapper/*.xml
+
+#配置调用
+cnf:
+  ip: ${IP:127.0.0.1}
+  port: ${PORT:8080}
+  url: ${URL:/config/url}
