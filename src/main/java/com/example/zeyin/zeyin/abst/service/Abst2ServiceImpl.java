@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
  * @Date: 2020年04月12日 17:00:10
  * @Modify:
  */
+@Service("abstService")
 public class Abst2ServiceImpl implements AbstService {
     /**
     * @Description: todo 用一句话描述
@@ -20,6 +21,6 @@ public class Abst2ServiceImpl implements AbstService {
     */
     @Override
     public void abstServiceMethod() {
-        System.out.println("Abst2ServiceImpl");
+        System.out.println("@Service(abstService)，根据service的值获取对应的实现类");
     }
 }
