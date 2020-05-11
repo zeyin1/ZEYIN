@@ -1,7 +1,6 @@
 package com.example.zeyin.algorithm.array;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 /**
  * @Description: 二维数组
@@ -169,4 +168,252 @@ public class Array02 {
         }
     }
 
+    /**
+     * @Description: 罗马数字转整数
+     * @Author: zeyin
+     * @Date: 2020/5/11 21:39
+     */
+    public int romanToInt(String s) {
+        int len = s.length();
+        int n1 = 0;
+        int n5 = 0;
+        int n10 = 0;
+        int n50 = 0;
+        int n100 = 0;
+        int n500 = 0;
+        int n1000 = 0;
+        int result = 0;
+        int pre = 0;
+        String[] a = new String[len];
+        char[] chars = s.toCharArray();
+        for (int i = len - 1; i > 0; i--) {
+            char c = chars[i];
+            String str = String.valueOf(c);
+            a[i] = str;
+        }
+        for (int i = len - 1; i >= 0; i--) {
+            if (s.charAt(i) == 'I') {
+                if (1 < pre) {
+                    n1--;
+                } else {
+                    n1++;
+                }
+                pre = 1;
+            }
+            if (s.charAt(i) == 'V') {
+                if (5 < pre) {
+                    n5--;
+                } else {
+                    n5++;
+                }
+                pre = 5;
+            }
+            if (s.charAt(i) == 'X') {
+                if (10 < pre) {
+                    n10--;
+                } else {
+                    n10++;
+                }
+                pre = 10;
+            }
+            if (s.charAt(i) == 'L') {
+                if (50 < pre) {
+                    n50--;
+                } else {
+                    n50++;
+                }
+                pre = 50;
+            }
+            if (s.charAt(i) == 'C') {
+                if (100 < pre) {
+                    n100--;
+                } else {
+                    n100++;
+                }
+                pre = 100;
+            }
+            if (s.charAt(i) == 'D') {
+                if (500 < pre) {
+                    n500--;
+                } else {
+                    n500++;
+                }
+                pre = 500;
+            }
+            if (s.charAt(i) == 'M') {
+                if (1000 < pre) {
+                    n1000--;
+                } else {
+                    n1000++;
+                }
+                pre = 1000;
+            }
+        }
+        result = result + 1000 * n1000 + 500 * n500 + 100 * n100 + 50 * n50 + 10 * n10 + 5 * n5 + 1 * n1;
+        return result;
+    }
+
+    /**
+     * @Description: 最长公共前缀
+     * 编写一个函数来查找字符串数组中的最长公共前缀。
+     * 如果不存在公共前缀，返回空字符串 ""。
+     * @Author: zeyin
+     * @Date: 2020/5/11 21:44
+     */
+    public String longestCommonPrefix(String[] val) {
+        if (val == null || val.length == 0) {
+            return "";
+        }
+
+        Arrays.sort(val);
+        String begin = val[0];
+        String end = val[val.length - 1];
+
+        int num = 0;
+        for (int i = 0; i < begin.length(); i++) {
+            if (begin.charAt(i) == end.charAt(i)) {
+                num++;
+            } else {
+                break;
+            }
+        }
+
+        return begin.substring(0, num);
+    }
+
+    /**
+     * @Description: 三数之和
+     * 给你一个包含 n 个整数的数组 nums，判断 nums 中是否存在三个元素 a，b，c ，使得 a + b + c = 0 ？请你找出所有满足条件且不重复的三元组。
+     * <p>
+     * 注意：答案中不可以包含重复的三元组。
+     * @Author: zeyin
+     * @Date: 2020/5/11 21:52
+     */
+    public List<List<Integer>> threeSum(int[] nums) {
+        List<List<Integer>> result = new ArrayList<>();
+
+        if (nums == null || nums.length < 3) {
+            return result;
+        }
+
+        Arrays.sort(nums);
+        for (int i = 0; i < nums.length - 2; ) {
+            int j = i + 1;
+            int k = nums.length - 1;
+            while (j < k) {
+                if (nums[j] + nums[k] == -nums[i]) {
+                    List<Integer> list = new ArrayList<>();
+                    list.add(nums[i]);
+                    list.add(nums[j]);
+                    list.add(nums[k]);
+                    result.add(list);
+                    j++;
+                    k--;
+
+                    while (j < k && nums[j] == nums[j - 1]) {
+                        j++;
+                    }
+                    while (j < k && nums[k] == nums[k + 1]) {
+                        k--;
+                    }
+                } else if (nums[j] + nums[k] > -nums[i]) {
+                    k--;
+                    while (j < k && nums[k] == nums[k + 1]) {
+                        k--;
+                    }
+                } else {
+                    j++;
+                    while (j < k && nums[j] == nums[j - 1]) {
+                        j++;
+                    }
+                }
+            }
+
+            i++;
+            while (i < nums.length - 2 && nums[i] == nums[i - 1]) {
+                i++;
+            }
+        }
+        return result;
+    }
+
+    /**
+     * @Description: 最接近的三数之和
+     * 给定一个包括 n 个整数的数组 nums 和 一个目标值 target。找出 nums 中的三个整数，使得它们的和与 target 最接近。返回这三个数的和。假定每组输入只存在唯一答案。
+     * 来源：力扣（LeetCode）
+     * 链接：https://leetcode-cn.com/problems/3sum-closest
+     * 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
+     * @Author: zeyin
+     * @Date: 2020/5/11 22:10
+     */
+    public int threeSumClosest(int[] nums, int target) {
+        long minDiff = Long.MAX_VALUE;
+        long result = 0;
+        long diff;
+        long sum;
+
+        Arrays.sort(nums);
+
+        for (int i = 0; i < nums.length; i++) {
+            int j = i + 1;
+            int k = nums.length - 1;
+
+            while (j < k) {
+                sum = nums[i] + nums[j] + nums[k];
+                diff = Math.abs(target - sum);
+                if (diff == 0) {
+                    return (int) sum;
+                }
+                if (diff < minDiff) {
+                    minDiff = diff;
+                    result = sum;
+                }
+
+                if (sum > target) {
+                    k--;
+                } else {
+                    j++;
+                }
+            }
+        }
+        return (int) result;
+    }
+
+    /**
+     * @Description: 20. 有效的括号
+     * 给定一个只包括 '('，')'，'{'，'}'，'['，']' 的字符串，判断字符串是否有效。
+     *
+     * 有效字符串需满足：
+     *
+     * 左括号必须用相同类型的右括号闭合。
+     * 左括号必须以正确的顺序闭合。
+     * 注意空字符串可被认为是有效字符串。
+     *
+     * 来源：力扣（LeetCode）
+     * 链接：https://leetcode-cn.com/problems/valid-parentheses
+     * 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
+     * @Author: zeyin
+     * @Date: 2020/5/11 22:19
+     */
+    public boolean isValid(String s) {
+        if((s.length()&1)==1) {
+            return false;
+        }
+        Stack<Character> stack=new Stack<Character>();
+        char[] chars=s.toCharArray();
+        for(int i=0;i<chars.length;i++) {
+            if(chars[i]=='(') {
+                stack.push(')');
+            }else if(chars[i]=='{') {
+                stack.push('}');
+            }else if(chars[i]=='[') {
+                stack.push(']');
+            }else if(stack.isEmpty()||stack.pop()!=chars[i]) {
+                return false;
+            }
+        }
+        return stack.isEmpty();
+    }
+
+    //20200511
 }
