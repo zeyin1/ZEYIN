@@ -449,4 +449,274 @@ public class Array02 {
         }
         return list.next;
     }
+
+    /**
+     * @Description: 26. 删除排序数组中的重复项
+     * 给定一个排序数组，你需要在 原地 删除重复出现的元素，使得每个元素只出现一次，返回移除后数组的新长度。
+     *
+     * 不要使用额外的数组空间，你必须在 原地 修改输入数组 并在使用 O(1) 额外空间的条件下完成。
+     *
+     * 来源：力扣（LeetCode）
+     * 链接：https://leetcode-cn.com/problems/remove-duplicates-from-sorted-array
+     * 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
+     * @Author: zeyin
+     * @Date: 2020/5/12 20:36
+     */
+    public int removeDuplicates(int[] nums) {
+        int index=0;
+        for (int num:nums){
+            if(index==0||num!=nums[index-1]){
+                nums[index++]=num;
+            }
+        }
+        return index;
+    }
+
+    /**
+     * @Description: 27. 移除元素
+     * 给你一个数组 nums 和一个值 val，你需要 原地 移除所有数值等于 val 的元素，并返回移除后数组的新长度。
+     *
+     * 不要使用额外的数组空间，你必须仅使用 O(1) 额外空间并 原地 修改输入数组。
+     *
+     * 元素的顺序可以改变。你不需要考虑数组中超出新长度后面的元素。
+     *
+     * 来源：力扣（LeetCode）
+     * 链接：https://leetcode-cn.com/problems/remove-element
+     * 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
+     * @Author: zeyin
+     * @Date: 2020/5/12 20:41
+     */
+    public int removeElement(int[] nums, int val) {
+        int index=0;
+        for (int num:nums){
+            if(num!=val){
+                nums[index++]=num;
+            }
+        }
+        return index;
+    }
+
+    /**
+     * @Description: 28. 实现 strStr()
+     * 给定一个 haystack 字符串和一个 needle 字符串，在 haystack 字符串中找出 needle 字符串出现的第一个位置 (从0开始)。如果不存在，则返回  -1。
+     *
+     * 来源：力扣（LeetCode）
+     * 链接：https://leetcode-cn.com/problems/implement-strstr
+     * 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
+     * @Author: zeyin
+     * @Date: 2020/5/12 21:29
+     */
+    public int strStr(String haystack, String needle) {
+        int len1=haystack.length();
+        int len2=needle.length();
+
+        for(int i=0;i<len1-len2;i++){
+            int j=0;
+            for (;j<len2;j++){
+                if(haystack.charAt(i+j)!=needle.charAt(j)){
+                    break;
+                }
+            }
+
+            if(j==len2){
+                return i;
+            }
+        }
+        return -1;
+    }
+
+    /**
+     * @Description: 35. 搜索插入位置
+     * 给定一个排序数组和一个目标值，在数组中找到目标值，并返回其索引。如果目标值不存在于数组中，返回它将会被按顺序插入的位置。
+     *
+     * 你可以假设数组中无重复元素。
+     * 二分查找
+     * @Author: zeyin
+     * @Date: 2020/5/12 21:34
+     */
+    public int searchInsert(int[] nums, int target) {
+        return binarySearch(nums,target,0,nums.length-1);
+    }
+
+    private int binarySearch(int[] nums, int target, int left, int right) {
+        if(left > right)
+            return -1;
+        if(left == right){
+            if(nums[left] >= target){
+                return left;
+            }else{
+                return right+1;
+            }
+        }
+
+        int mid = (left + right)/2;
+
+        if(target < nums[mid]){
+            return binarySearch(nums,target,left,mid);
+        }else if(target == nums[mid]){
+            return mid;
+        }else{
+            return binarySearch(nums,target,mid+1,right);
+        }
+    }
+
+    /**
+     * @Description: 38. 外观数列
+     *
+    「外观数列」是一个整数序列，从数字 1 开始，序列中的每一项都是对前一项的描述。前五项如下：
+
+    1.     1
+    2.     11
+    3.     21
+    4.     1211
+    5.     111221
+    1 被读作  "one 1"  ("一个一") , 即 11。
+    11 被读作 "two 1s" ("两个一"）, 即 21。
+    21 被读作 "one 2",  "one 1" （"一个二" ,  "一个一") , 即 1211。
+
+    给定一个正整数 n（1 ≤ n ≤ 30），输出外观数列的第 n 项。
+
+    注意：整数序列中的每一项将表示为一个字符串。
+     * @Author: zeyin
+     * @Date: 2020/5/12 21:38
+     */
+    public String countAndSay(int n) {
+        String result="";
+        if(n==1) {
+            return "1";
+        }
+        else {
+            String output=countAndSay(n-1);
+            int index=0;
+            while(index<output.length()) {
+                char current=output.charAt(index);
+                int cursor=index;
+                int count=0;
+                while(cursor<output.length()&&output.charAt(cursor)==current) {
+                    cursor++;
+                    count++;
+                }
+                char number=(char)(count+'0');
+                result+=number;
+                result+=current;
+                index+=count;
+            }
+        }
+        return result;
+    }
+
+    /**
+     * @Description: 53. 最大子序和
+     * 给定一个整数数组 nums ，找到一个具有最大和的连续子数组（子数组最少包含一个元素），返回其最大和。
+     * @Author: zeyin
+     * @Date: 2020/5/12 21:42
+     */
+    public int maxSubArray(int[] nums) {
+        int temp=nums[0];
+        int max=nums[0];
+        for(int i=1;i<nums.length;i++) {
+            temp=Math.max(temp+nums[i], nums[i]);
+            max=Math.max(max, temp);
+        }
+        return max;
+    }
+
+    /**
+     * @Description: 58. 最后一个单词的长度
+     * 给定一个仅包含大小写字母和空格 ' ' 的字符串 s，返回其最后一个单词的长度。如果字符串从左向右滚动显示，那么最后一个单词就是最后出现的单词。
+     *
+     * 如果不存在最后一个单词，请返回 0 。
+     *
+     * 来源：力扣（LeetCode）
+     * 链接：https://leetcode-cn.com/problems/length-of-last-word
+     * 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
+     * @Author: zeyin
+     * @Date: 2020/5/12 21:46
+     */
+    public int lengthOfLastWord(String s) {
+        int len=s.length();
+        int end=len;
+        for(int i=len-1;i>=0;i--) {
+            if(s.charAt(i)!=' ') {
+                break;
+            }
+            end=i;
+        }
+        int start=end;
+        for(int i=start;i>0;i--) {
+            if(s.charAt(i-1)==' ') {
+                break;
+            }
+            start=i-1;
+        }
+
+        return end-start;
+
+    }
+
+    /**
+     * @Description: 66. 加一
+     * 给定一个由整数组成的非空数组所表示的非负整数，在该数的基础上加一。
+     *
+     * 最高位数字存放在数组的首位， 数组中每个元素只存储单个数字。
+     *
+     * 你可以假设除了整数 0 之外，这个整数不会以零开头。
+     *
+     * 来源：力扣（LeetCode）
+     * 链接：https://leetcode-cn.com/problems/plus-one
+     * 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
+     * @Author: zeyin
+     * @Date: 2020/5/12 21:49
+     */
+    public int[] plusOne(int[] digits) {
+        int c=1;
+
+        for(int i=digits.length-1;i>=0;i--){
+            int sum=digits[i]+c;
+            c=sum/10;
+            digits[i]=sum%10;
+            if(c==0)
+                return digits;
+        }
+        int[] res=new int[(digits.length)+1];
+        res[0]=c;
+        for(int i=0;i<digits.length;i++){
+            res[i+1]=digits[i];
+        }
+        return res;
+    }
+    
+    /**
+     * @Description: 67. 二进制求和
+     * 给你两个二进制字符串，返回它们的和（用二进制表示）。
+     *
+     * 输入为 非空 字符串且只包含数字 1 和 0。
+     * @Author: zeyin
+     * @Date: 2020/5/12 21:51
+     */
+    public String addBinary(String a, String b) {
+        StringBuilder result=new StringBuilder();
+        int pa=a.length()-1;
+        int pb=b.length()-1;
+        int carry=0;
+        while(pa>=0||pb>=0) {
+            int sum=carry;
+            if(pa>=0) {
+                sum=sum+(a.charAt(pa)-'0');
+                pa--;
+            }
+            if(pb>=0) {
+                sum=sum+(b.charAt(pb)-'0');
+                pb--;
+            }
+            result.append(sum%2);
+            carry=sum/2;
+        }
+        if(carry!=0) {
+            result.append('1');
+        }
+
+        return result.reverse().toString();
+    }
+
 }
