@@ -719,4 +719,29 @@ public class Array02 {
         return result.reverse().toString();
     }
 
+    /**
+     * @Description: 69. x 的平方根
+     *计算并返回 x 的平方根，其中 x 是非负整数。
+     *
+     * 由于返回类型是整数，结果只保留整数的部分，小数部分将被舍去。
+     * @Author: zeyin
+     * @Date: 2020/5/14 20:29
+     */
+    public int mySqrt(int x) {
+        int i=0;
+        int j=x;
+        while(i<=j) {
+            int m=(i+j)/2;
+            long temp=(long)m*m;
+            if(temp==x) {
+                return m;
+            }else if(temp>x) {
+                j=m-1;
+            }else if(temp<x) {
+                i=m+1;
+            }
+        }
+        return i-1;
+    }
+
 }
