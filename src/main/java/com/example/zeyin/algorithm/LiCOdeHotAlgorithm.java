@@ -239,20 +239,97 @@ public class LiCOdeHotAlgorithm {
             return first_match && isMatch(text.substring(1), pattern.substring(1));
         }
     }
-
     /**
-     * @Description: 11. 盛最多水的容器
-     * 给你 n 个非负整数 a1，a2，...，an，每个数代表坐标中的一个点 (i, ai) 。在坐标内画 n 条垂直线，垂直线 i 的两个端点分别为 (i, ai) 和 (i, 0)。找出其中的两条线，使得它们与 x 轴共同构成的容器可以容纳最多的水。
+     * 32. 最长有效括号
+     * 给定一个只包含 '(' 和 ')' 的字符串，找出最长的包含有效括号的子串的长度。
      *
-     * 说明：你不能倾斜容器，且 n 的值至少为 2。
+     * 示例 1:
+     *
+     * 输入: "(()"
+     * 输出: 2
+     * 解释: 最长有效括号子串为 "()"
+     * 示例 2:
+     *
+     * 输入: ")()())"
+     * 输出: 4
+     * 解释: 最长有效括号子串为 "()()"
      *
      * 来源：力扣（LeetCode）
-     * 链接：https://leetcode-cn.com/problems/container-with-most-water
+     * 链接：https://leetcode-cn.com/problems/longest-valid-parentheses
      * 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
-     * @Author: zeyin
-     * @Date: 2020/5/14 21:19
      */
+    public int longestValidParentheses(String s) {
+        int count = 0, len = 0, max = 0;
+        for(int i = 0; i < s.length(); ++i){
+            if(s.charAt(i) == '(') ++count;
+            else --count;
+            ++len;
+            if(count < 0) count = len = 0;
+            else if(count == 0 && len > max) max = len;
+        }
+        if(count > 0){
+            count = len = 0;
+            for(int i = s.length()-1; i >= 0; --i){
+                if(s.charAt(i) == ')') ++count;
+                else --count;
+                ++len;
+                if(count < 0) count = len = 0;
+                else if(count == 0 && len > max) max = len;
+            }
+        }
+        return max;
+    }
 
+    /**
+     * 454. 四数相加 II
+     * 给定四个包含整数的数组列表 A , B , C , D ,计算有多少个元组 (i, j, k, l) ，使得 A[i] + B[j] + C[k] + D[l] = 0。
+     *
+     * 为了使问题简单化，所有的 A, B, C, D 具有相同的长度 N，且 0 ≤ N ≤ 500 。所有整数的范围在 -228 到 228 - 1 之间，最终结果不会超过 231 - 1 。
+     *
+     * 例如:
+     *
+     * 输入:
+     * A = [ 1, 2]
+     * B = [-2,-1]
+     * C = [-1, 2]
+     * D = [ 0, 2]
+     *
+     * 输出:
+     * 2
+     *
+     * 解释:
+     * 两个元组如下:
+     * 1. (0, 0, 0, 1) -> A[0] + B[0] + C[0] + D[1] = 1 + (-2) + (-1) + 2 = 0
+     * 2. (1, 1, 0, 0) -> A[1] + B[1] + C[0] + D[0] = 2 + (-1) + (-1) + 0 = 0
+     *
+     * 来源：力扣（LeetCode）
+     * 链接：https://leetcode-cn.com/problems/4sum-ii
+     * 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
+     *
+     */
+    public int fourSumCount(int[] A, int[] B, int[] C, int[] D) {
+        Map<Integer,Integer> wABMap=new HashMap<>();
+        for (int i=0;i<A.length;i++){
+            for (int j=0;j<B.length;j++){
+                int wKey=A[i]+B[j];
+                if (wABMap.containsKey(wKey)){
+                    wABMap.put(wKey,wABMap.get(wKey)+1);
+                }else {
+                    wABMap.put(wKey,1);
+                }
+            }
+        }
 
+        int wRes=0;
+        for (int i=0;i<C.length;i++){
+            for (int j=0;j<D.length;j++){
+                int wKey=C[i]+D[j];
+                if (wABMap.containsKey(0-wKey)){
+                    wRes=wRes+wABMap.get(0-wKey);
+                }
+            }
+        }
+        return wRes;
+    }
 
 }
