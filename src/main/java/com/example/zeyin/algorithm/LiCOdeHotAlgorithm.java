@@ -331,5 +331,80 @@ public class LiCOdeHotAlgorithm {
         }
         return wRes;
     }
+    /**
+     * 395. 至少有K个重复字符的最长子串
+     * 找到给定字符串（由小写字符组成）中的最长子串 T ， 要求 T 中的每一字符出现次数都不少于 k 。输出 T 的长度。
+     *
+     * 示例 1:
+     *
+     * 输入:
+     * s = "aaabb", k = 3
+     *
+     * 输出:
+     * 3
+     *
+     * 最长子串为 "aaa" ，其中 'a' 重复了 3 次。
+     * 示例 2:
+     *
+     * 输入:
+     * s = "ababbc", k = 2
+     *
+     * 输出:
+     * 5
+     *
+     * 最长子串为 "ababb" ，其中 'a' 重复了 2 次， 'b' 重复了 3 次。
+     *
+     * 来源：力扣（LeetCode）
+     * 链接：https://leetcode-cn.com/problems/longest-substring-with-at-least-k-repeating-characters
+     * 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
+     */
+    public int longestSubstring(String s, int k)
+    {
+        int len = s.length();
+        if (len == 0 || k > len)
+        {
+            return 0;
+        }
+        if (k < 2)
+        {
+            return len;
+        }
+        return count(s.toCharArray(), k, 0, len - 1);
+    }
+
+    private static int count(char[] chars, int k, int left, int right)
+    {
+        if (right - left + 1 < k) return 0;
+        int[] times = new int[26];  //  26个字母
+        for (int i = left; i <= right; ++i)
+        {
+            times[chars[i] - 'a']++;//统计每个字母出现的次数，字符出现频次小于k，则不可能出现在结果子串中
+        }
+        //分别排除，然后挪动两个指针
+        while (right - left + 1 >= k && times[chars[left] - 'a'] < k)
+        {
+            ++left;
+        }
+        while (right - left + 1 >= k && times[chars[right] - 'a'] < k)
+        {
+            --right;
+        }
+
+        if (right - left + 1 < k)//排除到剩余的字符串小于k，则直接return
+        {
+            return 0;
+        }
+        //  得到临时子串，再递归处理
+        for (int i = left; i <= right; ++i)
+        {
+            //  如果第i个不符合要求，切分成左右两段分别递归求得
+            if (times[chars[i] - 'a'] < k)
+            {
+                return Math.max(count(chars, k, left, i - 1), count(chars, k, i + 1, right));
+            }
+        }
+        return right - left + 1;
+    }
+
 
 }
