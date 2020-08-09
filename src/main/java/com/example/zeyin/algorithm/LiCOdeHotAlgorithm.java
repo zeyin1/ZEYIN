@@ -1,6 +1,7 @@
 package com.example.zeyin.algorithm;
 
 import com.example.zeyin.algorithm.util.ListNode;
+import com.example.zeyin.algorithm.util.TreeNode;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -404,6 +405,77 @@ public class LiCOdeHotAlgorithm {
             }
         }
         return right - left + 1;
+    }
+
+    /**
+     * 329. 矩阵中的最长递增路径
+     * 给定一个整数矩阵，找出最长递增路径的长度。
+     *
+     * 对于每个单元格，你可以往上，下，左，右四个方向移动。 你不能在对角线方向上移动或移动到边界外（即不允许环绕）。
+     *
+     * 示例 1:
+     *
+     * 输入: nums =
+     * [
+     *   [9,9,4],
+     *   [6,6,8],
+     *   [2,1,1]
+     * ]
+     * 输出: 4
+     * 解释: 最长递增路径为 [1, 2, 6, 9]。
+     * 示例 2:
+     *
+     * 输入: nums =
+     * [
+     *   [3,4,5],
+     *   [3,2,6],
+     *   [2,2,1]
+     * ]
+     * 输出: 4
+     * 解释: 最长递增路径是 [3, 4, 5, 6]。注意不允许在对角线方向上移动。
+     *
+     * 来源：力扣（LeetCode）
+     * 链接：https://leetcode-cn.com/problems/longest-increasing-path-in-a-matrix
+     * 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
+     */
+    public int longestIncreasingPath(int[][] matrix) {
+        return 1;
+
+    }
+
+
+    /**
+     * @Description: 用一句话描述
+     * @Author: zeyin
+     * @Date: 2020/8/9 10:48
+     */
+    public TreeNode buildTree(int[] preorder, int[] inorder) {
+        int preLen=preorder.length;
+        int inLen=inorder.length;
+        if (preLen!=inLen){
+            return null;
+        }
+
+        Map<Integer,Integer> map=new HashMap<>();
+        for (int i=0;i<inLen;i++){
+            map.put(inorder[i],i);
+        }
+
+        return buildTree(preorder,0,preLen-1,map,0,inLen-1);
+    }
+
+    private TreeNode buildTree(int[] preorder,int preleft,int preright,Map<Integer,Integer> map,int inleft,int inright){
+        if (preleft>preright||inleft>inright){
+            return null;
+        }
+
+        int val=preorder[preleft];
+        TreeNode root=new TreeNode(val);
+        int pIndex=map.get(val);
+
+        root.left=buildTree(preorder,preleft+1,pIndex-inleft+preleft,map,inleft,pIndex-1);
+        root.right=buildTree(preorder,pIndex-inleft+preleft+1,preright,map,pIndex+1,inright);
+        return root;
     }
 
 
