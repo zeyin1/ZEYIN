@@ -64,4 +64,67 @@ public class Board {
     private boolean inArea(int x, int y) {
         return x >= 0 && x < m && y >= 0 && y < n;
     }
+
+    /**
+     * @Description: 用一句话描述
+     * @Author: zeyin
+     * @Date: 2020/8/10 21:48
+     */
+    public String convert(String s, int numRows) {
+        if (s == null || s.length() == 0)
+            return s;
+
+        StringBuilder[] array = new StringBuilder[numRows];
+        for (int i = 0; i < numRows; i++) {
+            array[i] = new StringBuilder();
+        }
+
+        int dir = 1;
+        int index = 0;
+        for (char c : s.toCharArray()) {
+            array[index].append(c);
+            index += dir;
+            if (index == 0 || index == array.length - 1) {
+                dir = -dir;
+            }
+        }
+
+        StringBuilder res = new StringBuilder();
+        for (StringBuilder sb : array) {
+            res.append(sb);
+        }
+        return res.toString();
+    }
+
+    /**
+     * @Description: 用一句话描述
+     * @Author: zeyin
+     * @Date: 2020/8/12 23:21
+     */
+    public double myPow(double x, int n) {
+        if (n == 0 || x == 1)
+            return 1;
+
+        if (n < 0) {
+            return 1 / myPow1(x, Math.abs(n));
+        } else {
+            return myPow1(x, Math.abs(n));
+        }
+    }
+
+    public double myPow1(double x, int n) {
+        if (n == 1) {
+            return x;
+        }
+
+        if (n % 2 != 0) {
+            double half = myPow(x, n / 2);
+            return half * half * x;
+        } else {
+            double half = myPow(x, n / 2);
+            return half * half;
+        }
+    }
+
+
 }
