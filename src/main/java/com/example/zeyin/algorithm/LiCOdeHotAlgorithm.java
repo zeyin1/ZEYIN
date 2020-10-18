@@ -1,7 +1,7 @@
 package com.example.zeyin.algorithm;
 
-import com.example.zeyin.algorithm.util.ListNode;
-import com.example.zeyin.algorithm.util.TreeNode;
+import com.example.zeyin.util.ListNode;
+import com.example.zeyin.util.TreeNode;
 
 import java.util.HashMap;
 import java.util.Map;

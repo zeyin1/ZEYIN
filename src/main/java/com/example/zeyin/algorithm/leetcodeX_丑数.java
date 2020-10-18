@@ -1,22 +1,20 @@
-package com.example.zeyin.algorithm.number;
+package com.example.zeyin.algorithm;
 
 /**
- * @Description: 丑数
+ * @Description: 用一句话描述
  * @Author: zeyin
- * @Date: 2020年04月01日 21:55:56
+ * @Date: 2020年10月18日 14:44
  * @Modify:
  */
-
-public class UglyNumber {
-
+public class leetcodeX_丑数 {
     /**
-    * @Description: 寻找第N个丑数
-    * @Author: zeyin
-    * @Date: 2020/4/1 21:56
-    * @Modify:
-    * @Param:
-    * @Return:
-    */
+     * @Description: 寻找第N个丑数
+     * @Author: zeyin
+     * @Date: 2020/4/1 21:56
+     * @Modify:
+     * @Param:
+     * @Return:
+     */
     public static Integer getUglyNumber_Solution(Integer pIndex){
         if(pIndex <=0)
             return 0;

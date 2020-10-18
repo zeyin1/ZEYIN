@@ -1,4 +1,4 @@
-package com.example.zeyin.algorithm.util;
+package com.example.zeyin.util;
 
 /**
  * @Description: 用一句话描述

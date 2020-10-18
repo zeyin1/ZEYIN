@@ -1,6 +1,6 @@
 package com.example.zeyin.algorithm.leetCode;
 
-import com.example.zeyin.algorithm.util.ListNode;
+import com.example.zeyin.util.ListNode;
 
 /**
  * @Description: 用一句话描述

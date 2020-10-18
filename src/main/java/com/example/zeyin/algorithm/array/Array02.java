@@ -1,6 +1,6 @@
 package com.example.zeyin.algorithm.array;
 
-import com.example.zeyin.algorithm.util.ListNode;
+import com.example.zeyin.util.ListNode;
 
 import java.util.*;
 
