@@ -16,13 +16,13 @@ import java.util.Map;
  * @Date: 2020年10月18日 15:15
  * @Modify:
  */
- class leetcodeX_LRU缓存 {
+public class LRUCache {
 
     Map<Integer,Integer> cache = null;
 
     // 这个是匿名内部类
     // LinkedHashMap的三个构造函数分别是初始容量，扩容因子和是否移除旧的元素
-    public leetcodeX_LRU缓存(int capacity) {
+    public LRUCache(int capacity) {
         cache = new LinkedHashMap<Integer, Integer>(capacity,0.75f,true){
             // 必须覆盖该方法来保证移除旧的元素
             // 返回false，不删除
