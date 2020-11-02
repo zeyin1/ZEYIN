@@ -1,7 +1,5 @@
 package com.example.zeyin.algorithm.leetCode;
 
-import org.springframework.stereotype.Service;
-
 /**
  * @Description: 用一句话描述
  * @Author: zeyin
@@ -10,7 +8,7 @@ import org.springframework.stereotype.Service;
  */
 public class leetCodeLCP22 {
 
-    public int paintingPlan(int n, int k) {
+    public static int paintingPlan(int n, int k) {
 
         if (k==n*n){
             return 1;
@@ -19,17 +17,19 @@ public class leetCodeLCP22 {
         int wCount =0;
         for (int i=0;i<n;i++){
             for (int j=0;j<n;j++){
-                wCount+=sumC(n,i)*sumC(n,j);
+                if (i * n + (n - i) * j == k) {
+                    wCount += sumC(n, i) * sumC(n, j);
+                }
             }
         }
         return wCount;
     }
 
-    private int sumC(int n,int m){
+    private static   int sumC(int n,int m){
         return recurrence(n)/(recurrence(m)*recurrence(n-m));
     }
 
-    private int recurrence(int n){
+    private static int recurrence(int n){
         if(n<=1){
             return 1;
         }
