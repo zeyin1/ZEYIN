@@ -8,6 +8,7 @@ class ZeyinApplicationTests {
 
     @Test
     void contextLoads() {
+        System.out.println("hhh");
     }
 
 }

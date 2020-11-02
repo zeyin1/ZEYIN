@@ -1,4 +1,4 @@
-package com.example.zeyin.algorithm;
+package com.example.zeyin.algorithm.leetCode;
 
 import com.example.zeyin.util.ListNode;
 import com.example.zeyin.util.TreeNode;

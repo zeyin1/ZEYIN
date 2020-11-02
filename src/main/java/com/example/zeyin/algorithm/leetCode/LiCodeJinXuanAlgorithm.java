@@ -1,4 +1,4 @@
-package com.example.zeyin.algorithm;
+package com.example.zeyin.algorithm.leetCode;
 
 /**
  * @Description: 力扣精选算法

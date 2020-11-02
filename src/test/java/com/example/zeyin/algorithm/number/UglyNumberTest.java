@@ -24,6 +24,6 @@ public class UglyNumberTest {
     @Test
     public void GetUglyNumber_SolutionTest(){
         Integer wIndex=100;
-        System.out.println(UglyNumber.getUglyNumber_Solution(wIndex));
+        //System.out.println(UglyNumber.getUglyNumber_Solution(wIndex));
     }
 }
