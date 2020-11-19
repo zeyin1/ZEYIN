@@ -4,18 +4,19 @@ import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 /**
- * @Description: 用一句话描述
+ * @Description: 希尔排序
  * @Author: zeyin
- * @Date: 2020年11月19日 16:03
+ * @Date: 2020年11月19日 16:27
  * @Modify:
  */
 @SpringBootTest
-public class QuickSortTest {
+public class SheelSortTest {
 
     @Test
-    public void test() {
+    public void test(){
         int[] nums = DataSource.returnNums();
-        QuickSort.quickSort(0, nums.length - 1, nums);
+        SheelSort.sheelSort(nums);
+        DataSource.print(nums);
     }
 
 }

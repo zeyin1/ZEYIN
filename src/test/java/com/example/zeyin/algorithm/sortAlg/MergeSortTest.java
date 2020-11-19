@@ -4,18 +4,18 @@ import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 /**
- * @Description: 用一句话描述
+ * @Description: 归并排序
  * @Author: zeyin
- * @Date: 2020年11月19日 16:03
+ * @Date: 2020年11月19日 16:28
  * @Modify:
  */
 @SpringBootTest
-public class QuickSortTest {
+public class MergeSortTest {
 
     @Test
     public void test() {
         int[] nums = DataSource.returnNums();
-        QuickSort.quickSort(0, nums.length - 1, nums);
+        MergeSort.mergeSort(nums, 0, nums.length - 1);
+        DataSource.print(nums);
     }
-
 }

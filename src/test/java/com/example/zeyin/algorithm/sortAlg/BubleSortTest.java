@@ -4,18 +4,18 @@ import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 /**
- * @Description: 用一句话描述
+ * @Description: 冒泡排序
  * @Author: zeyin
- * @Date: 2020年11月19日 16:03
+ * @Date: 2020年11月19日 16:26
  * @Modify:
  */
 @SpringBootTest
-public class QuickSortTest {
+public class BubleSortTest {
 
     @Test
     public void test() {
         int[] nums = DataSource.returnNums();
-        QuickSort.quickSort(0, nums.length - 1, nums);
+        BubleSort.bubleSort(nums);
+        DataSource.print(nums);
     }
-
 }
