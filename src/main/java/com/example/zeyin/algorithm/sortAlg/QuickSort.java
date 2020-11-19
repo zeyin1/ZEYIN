@@ -19,16 +19,17 @@ public class QuickSort {
 
         //先找较小值，后找较大值
         while (i < j) {
-            //找到较小值
+            //(1)找到较小值
             while ((i < j) && (nums[j] >= target)) {
                 j--;
             }
 
-            //找到较大值
+            //(2)找到较大值
             while ((i < j) && (nums[i] <= target)) {
                 i++;
             }
 
+            //(3)在范围内交换数据
             if (i < j) {
                 int tmp = nums[j];
                 nums[j] = nums[i];
@@ -36,11 +37,11 @@ public class QuickSort {
             }
         }
 
-        //交换目标值
+        //（4）循环结束，交换目标值和中间值（i==j）
         nums[l] = nums[i];
         nums[i] = target;
 
-        //递归处理
+        //(5)递归处理,索引+1或-1
         quickSort(l, i - 1, nums);
         quickSort(i + 1, r, nums);
     }
