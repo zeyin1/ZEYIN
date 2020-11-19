@@ -17,6 +17,7 @@ public class QuickSort {
         int j = r;//右索引
         int target = nums[l];//目标值
 
+        //先找较小值，后找较大值
         while (i < j) {
             //找到较小值
             while ((i < j) && (nums[j] >= target)) {
