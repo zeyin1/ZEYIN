@@ -26,27 +26,27 @@ public class leetcode2 {
             curNode=curNode.next;
         }
 
-            while (l1!=null){
+        while (l1!=null){
                 int sum=l1.val+c;
                 c=sum/10;
                 sum=sum%10;
                 curNode.next=new ListNode(sum);
                 curNode=curNode.next;
-            }
+        }
 
-            while (l2!=null){
+        while (l2!=null){
                 int sum=l2.val+c;
                 c=sum/10;
                 sum=sum%10;
                 curNode.next=new ListNode(sum);
                 curNode=curNode.next;
-            }
+        }
 
-            if (c>0){
+        if (c>0){
                 curNode.next=new ListNode(c);
                 curNode=curNode.next;
-            }
+        }
 
-            return headNode.next;
+        return headNode.next;
     }
 }
