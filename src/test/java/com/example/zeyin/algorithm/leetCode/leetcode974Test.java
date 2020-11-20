@@ -3,6 +3,8 @@ package com.example.zeyin.algorithm.leetCode;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
+import java.util.List;
+
 /**
  * @Description: 用一句话描述
  * @Author: zeyin
@@ -18,5 +20,12 @@ public class leetcode974Test {
         int k = 5;
         int res = leetCode974.subarraysDivByK(nums, k);
         System.out.println(res);
+    }
+
+    @Test
+    public void  test1(){
+        int[] nums={1,3,5,7,8,25,4,20};
+        List<Integer> res= 平衡点.Method(nums);
+        return;
     }
 }
