@@ -12,7 +12,7 @@ import java.util.List;
  */
 public class leetcode39 {
 
-    public List<List<Integer>> combinationSum(int[] candidates, int target) {
+    public static List<List<Integer>> combinationSum(int[] candidates, int target) {
         List<List<Integer>> res=new ArrayList<List<Integer>>();
         if(candidates==null||candidates.length<1) {
             return res;
@@ -23,7 +23,7 @@ public class leetcode39 {
 
         return res;
     }
-    private void backtrack(int[] nums,int target,List<List<Integer>> res,ArrayList<Integer> list,int start) {
+    private static void backtrack(int[] nums,int target,List<List<Integer>> res,ArrayList<Integer> list,int start) {
         if(target<0) {
             return;
         }
