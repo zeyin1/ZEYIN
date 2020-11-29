@@ -19,7 +19,7 @@ public class DSU {
         return parent[x] != x ? parent[x] = find(parent[x]) : x;
     }
 
-    //构成互通的链表
+    //构成互通的链表（链表根节点处）
     public void union(int x, int y) {
         parent[find(x)] = find(y);
     }
