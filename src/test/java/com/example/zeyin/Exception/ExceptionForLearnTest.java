@@ -33,4 +33,10 @@ public class ExceptionForLearnTest {
         int res = ExceptionForLearn.FinallyException1();
         System.out.print("结果： " + res);
     }
+
+    @Test
+    public void test5() {
+        int res = ExceptionForLearn.FinallyException2();
+        System.out.print("结果： " + res);
+    }
 }

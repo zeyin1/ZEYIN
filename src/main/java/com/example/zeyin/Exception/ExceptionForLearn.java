@@ -65,4 +65,28 @@ public class ExceptionForLearn {
         }
 
     }
+
+    /**
+     * @Description:
+     * 只有在try里面是有System.exit(0)来退出JVM的情况下finally块中的代码才不会执行。否则finally块中的代码都会执行。
+     * 一般来讲finally里面不会写return或者是throw，如果写了，会覆盖掉try里面的return和throw。
+     * @Author: zeyin
+     * @Date: 2021/1/10 14:39
+     */
+    public static int FinallyException2() {
+        try {
+            System.out.println("正常逻辑处理");
+            int res = 1 / 0;
+            return 1;
+        } catch (Exception e) {
+            System.out.println("异常逻辑处理");
+
+            //退出JVM,不会指向finally
+            System.exit(0);
+            return 2;
+        } finally {
+            System.out.println("finally逻辑处理");
+        }
+
+    }
 }
