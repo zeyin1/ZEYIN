@@ -1,4 +1,4 @@
-package com.example.zeyin.Parallel;
+package com.example.zeyin.Parallel.thread;
 
 /**
  * @Description: 用一句话描述

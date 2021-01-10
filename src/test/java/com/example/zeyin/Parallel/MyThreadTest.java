@@ -1,5 +1,8 @@
 package com.example.zeyin.Parallel;
 
+import com.example.zeyin.Parallel.thread.MyThread1;
+import com.example.zeyin.Parallel.thread.MyThread2;
+import com.example.zeyin.Parallel.thread.MyThread3;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
