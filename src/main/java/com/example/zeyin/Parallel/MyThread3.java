@@ -10,7 +10,7 @@ import java.util.concurrent.Callable;
  */
 public class MyThread3 implements Callable {
     @Override
-    public Object call() throws Exception {
+    public Boolean call() {
         System.out.println("Callable方法，创建线程");
         return true;
     }
