@@ -89,4 +89,13 @@ public class ExceptionForLearn {
         }
 
     }
+
+    /**
+     * @Description: 自定义异常
+     * @Author: zeyin
+     * @Date: 2021/1/10 14:54
+     */
+    public static void myOwnException() throws MyOwnException {
+        throw new MyOwnException("抛出定义异常");
+    }
 }

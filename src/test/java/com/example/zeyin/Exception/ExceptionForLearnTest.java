@@ -39,4 +39,9 @@ public class ExceptionForLearnTest {
         int res = ExceptionForLearn.FinallyException2();
         System.out.print("结果： " + res);
     }
+
+    @Test
+    public void tesst6() throws MyOwnException {
+        ExceptionForLearn.myOwnException();
+    }
 }
