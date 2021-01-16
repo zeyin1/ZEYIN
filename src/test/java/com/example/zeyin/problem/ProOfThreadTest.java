@@ -20,6 +20,7 @@ public class ProOfThreadTest {
     public static void main(String[] args) {
         //ProOfThread.runDAfterABC();
         //ProOfThread.demo3();
-        ProOfThread.runABCWhenAllReady();
+        //ProOfThread.runABCWhenAllReady();
+        ProOfThread.doTaskWithResultInWorker();
     }
 }

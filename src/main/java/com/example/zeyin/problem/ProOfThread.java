@@ -1,9 +1,7 @@
 package com.example.zeyin.problem;
 
 import java.util.Random;
-import java.util.concurrent.BrokenBarrierException;
-import java.util.concurrent.CountDownLatch;
-import java.util.concurrent.CyclicBarrier;
+import java.util.concurrent.*;
 
 /**
  * @Description: 本文章参考wingjay所著，仅供学习
@@ -12,6 +10,44 @@ import java.util.concurrent.CyclicBarrier;
  * @Modify:
  */
 public class ProOfThread {
+
+    /**
+     * @Description: 线程学习（使用Callable，把结果传回来，多个线程嵌套执行）
+     * （1）主线程调用 futureTask.get() 方法时阻塞主线程；然后 Callable 内部开始执行，并返回运算结果；
+     * 此时 futureTask.get() 得到结果，主线程恢复运行
+     * （2）通过 FutureTask 和 Callable 可以直接在主线程获得子线程的运算结果，只不过需要阻塞主线程。
+     * 当然，如果不希望阻塞主线程，可以考虑利用 ExecutorService，把 FutureTask 放到线程池去管理执行
+     * @Author: zeyin
+     * @Date: 2021/1/16 11:00
+     */
+    public static void doTaskWithResultInWorker() {
+        Callable<Integer> callable = new Callable<Integer>() {
+            @Override
+            public Integer call() throws Exception {
+                System.out.println("Task starts");
+                Thread.sleep(1000);
+                int result = 0;
+                for (int i=0; i<=100; i++) {
+                    result += i;
+                }
+                System.out.println("Task finished and return result");
+                return result;
+            }
+        };
+
+        //通过FutureTask把结果传回来
+        FutureTask<Integer> futureTask = new FutureTask<>(callable);
+        new Thread(futureTask).start();
+        try {
+            System.out.println("Before futureTask.get()");
+            System.out.println("Result: " + futureTask.get());
+            System.out.println("After futureTask.get()");
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        }
+    }
 
     /**
      * @Description: 线程学习（使用CyclicBarrier，多个线程嵌套执行）
