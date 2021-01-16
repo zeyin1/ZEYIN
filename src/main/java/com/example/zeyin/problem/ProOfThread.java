@@ -23,11 +23,42 @@ public class ProOfThread {
      */
     public static void runABCWhenAllReady() {
         int runner = 3;//阈值
-        CyclicBarrier cyclicBarrier = new CyclicBarrier(runner);
+        CyclicBarrier cyclicBarrier = new CyclicBarrier(runner);//可以重复使用
 
         final Random random = new Random();//随机数对象
 
+        //第一次使用
         for (char runnerName='A'; runnerName <= 'C'; runnerName++) {
+            final String rN = String.valueOf(runnerName);
+            new Thread(new Runnable() {
+                @Override
+                public void run() {
+                    long prepareTime = random.nextInt(10000) + 100;
+                    System.out.println(rN + " is preparing for time: " + prepareTime);
+                    try {
+                        Thread.sleep(prepareTime);
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+                    try {
+                        System.out.println(rN + " is prepared, waiting for others");
+
+                        // 当前运动员准备完毕，等待别人准备好
+                        cyclicBarrier.await();
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    } catch (BrokenBarrierException e) {
+                        e.printStackTrace();
+                    }
+
+                    // 所有运动员都准备好了，一起开始跑
+                    System.out.println(rN + " starts running");
+                }
+            }).start();
+        }
+
+        //第一次使用
+        for (char runnerName='D'; runnerName <= 'F'; runnerName++) {
             final String rN = String.valueOf(runnerName);
             new Thread(new Runnable() {
                 @Override
@@ -73,7 +104,7 @@ public class ProOfThread {
     public static void runDAfterABC() {
 
         int worker = 3;//三个线程并发执行
-        CountDownLatch countDownLatch = new CountDownLatch(worker);
+        CountDownLatch countDownLatch = new CountDownLatch(worker);//只能使用一次
 
         //等待线程
         new Thread(new Runnable() {
