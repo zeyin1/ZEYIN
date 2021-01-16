@@ -1,6 +1,9 @@
 package com.example.zeyin.problem;
 
+import java.util.Random;
+import java.util.concurrent.BrokenBarrierException;
 import java.util.concurrent.CountDownLatch;
+import java.util.concurrent.CyclicBarrier;
 
 /**
  * @Description: 本文章参考wingjay所著，仅供学习
@@ -11,12 +14,59 @@ import java.util.concurrent.CountDownLatch;
 public class ProOfThread {
 
     /**
+     * @Description: 线程学习（使用CyclicBarrier，多个线程嵌套执行）
+     * 三个运动员各自准备，等到三个人都准备好后，再一起跑
+     *
+     * 作用：实现线程间互相等待这种需求，我们可以利用 CyclicBarrier 数据结构
+     * @Author: zeyin
+     * @Date: 2021/1/16 10:45
+     */
+    public static void runABCWhenAllReady() {
+        int runner = 3;//阈值
+        CyclicBarrier cyclicBarrier = new CyclicBarrier(runner);
+
+        final Random random = new Random();//随机数对象
+
+        for (char runnerName='A'; runnerName <= 'C'; runnerName++) {
+            final String rN = String.valueOf(runnerName);
+            new Thread(new Runnable() {
+                @Override
+                public void run() {
+                    long prepareTime = random.nextInt(10000) + 100;
+                    System.out.println(rN + " is preparing for time: " + prepareTime);
+                    try {
+                        Thread.sleep(prepareTime);
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+                    try {
+                        System.out.println(rN + " is prepared, waiting for others");
+
+                        // 当前运动员准备完毕，等待别人准备好
+                        cyclicBarrier.await();
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    } catch (BrokenBarrierException e) {
+                        e.printStackTrace();
+                    }
+
+                    // 所有运动员都准备好了，一起开始跑
+                    System.out.println(rN + " starts running");
+                }
+            }).start();
+        }
+    }
+
+
+    /**
      * @Description: 线程学习（使用CountDownLatch，多个线程嵌套执行）
      * 四个线程 A B C D，其中 D 要等到 A B C 全执行完毕后才执行，而且 A B C 是同步运行的
      * (1)创建一个计数器，设置初始值，CountdownLatch countDownLatch = new CountDownLatch(2);
      * (2)在 等待线程 里调用 countDownLatch.await() 方法，进入等待状态，直到计数值变成 0；
      * (3)在 其他线程 里，调用 countDownLatch.countDown() 方法，该方法会将计数值减小 1；
      * (4)当 其他线程 的 countDown() 方法把计数值变成 0 时，等待线程 里的 countDownLatch.await() 立即退出，继续执行下面的代码。
+     *
+     * 作用：CountDownLatch 可以用来倒计数，但当计数完毕，只有一个线程的 await() 会得到响应，无法让多个线程同时触发。
      * @Author: zeyin
      * @Date: 2021/1/16 10:34
      */

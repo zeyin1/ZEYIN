@@ -18,6 +18,8 @@ public class ProOfThreadTest {
      * @Date: 2021/1/16 10:26
      */
     public static void main(String[] args) {
-        ProOfThread.runDAfterABC();
+        //ProOfThread.runDAfterABC();
+        //ProOfThread.demo3();
+        ProOfThread.runABCWhenAllReady();
     }
 }
