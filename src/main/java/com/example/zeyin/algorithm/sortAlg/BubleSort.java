@@ -1,6 +1,6 @@
 package com.example.zeyin.algorithm.sortAlg;
 
-import com.example.zeyin.util.MethodUtil;
+import com.example.zeyin.util.ExchangeUtil;
 
 /**
  * @Description: 冒泡排序
@@ -18,7 +18,7 @@ public class BubleSort {
         for (int i = 0; i < nums.length; i++) {
             for (int j = 0; j < nums.length - 1 - i; j++) {
                 if (nums[j] > nums[j + 1]) {
-                    MethodUtil.exchange(j, j + 1, nums);
+                    ExchangeUtil.exchange(j, j + 1, nums);
                 }
             }
         }

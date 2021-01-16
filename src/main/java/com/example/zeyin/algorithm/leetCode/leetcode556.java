@@ -1,6 +1,6 @@
 package com.example.zeyin.algorithm.leetCode;
 
-import com.example.zeyin.util.MethodUtil;
+import com.example.zeyin.util.ExchangeUtil;
 
 /**
  * @Description: 用一句话描述
@@ -26,11 +26,11 @@ public class leetcode556 {
             }
 
             //交换目标值和j对应的元素
-            MethodUtil.exchange(i,j,chars);
+            ExchangeUtil.exchange(i,j,chars);
 
             //把i后的元素反转
             for (int  k=i+1;k<=i+(chars.length-1-i)/2;k++){
-                MethodUtil.exchange(k,chars.length-k+i,chars);
+                ExchangeUtil.exchange(k,chars.length-k+i,chars);
             }
 
                 return Integer.parseInt(new String(chars));

@@ -6,7 +6,7 @@ package com.example.zeyin.util;
  * @Date: 2020年11月19日 17:11
  * @Modify:
  */
-public class MethodUtil {
+public class ExchangeUtil {
 
     public static  void exchange(int i, int j, int[] nums) {
         int tmp = nums[i];

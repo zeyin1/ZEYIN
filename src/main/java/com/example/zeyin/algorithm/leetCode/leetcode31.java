@@ -1,6 +1,6 @@
 package com.example.zeyin.algorithm.leetCode;
 
-import com.example.zeyin.util.MethodUtil;
+import com.example.zeyin.util.ExchangeUtil;
 
 /**
  * @Description: 用一句话描述
@@ -27,7 +27,7 @@ public class leetcode31 {
                 j--;
             }
             //交换j,i元素
-            MethodUtil.exchange(i,j,nums);
+            ExchangeUtil.exchange(i,j,nums);
         }
 
         //反转I=1后面数组
@@ -38,7 +38,7 @@ public class leetcode31 {
     private static void reverse(int[] nums, int start) {
         int i = start, j = nums.length - 1;
         while (i < j) {
-            MethodUtil.exchange( i, j,nums);
+            ExchangeUtil.exchange( i, j,nums);
             i++;
             j--;
         }

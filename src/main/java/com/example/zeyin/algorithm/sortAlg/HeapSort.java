@@ -1,6 +1,6 @@
 package com.example.zeyin.algorithm.sortAlg;
 
-import com.example.zeyin.util.MethodUtil;
+import com.example.zeyin.util.ExchangeUtil;
 
 /**
  * @Description: 堆排序
@@ -26,7 +26,7 @@ public class HeapSort {
 
         //(2)调整堆结构，交换堆顶元素与末尾元素
         for (int i = len - 1; i > 0; i--) {
-            MethodUtil.exchange(0, i, nums);//堆顶元素与末尾元素交换
+            ExchangeUtil.exchange(0, i, nums);//堆顶元素与末尾元素交换
             heapAdjust(nums, 0, i);//重新对堆进行调整，得到i-1个节点的堆
         }
     }

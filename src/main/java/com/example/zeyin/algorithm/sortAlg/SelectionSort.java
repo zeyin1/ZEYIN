@@ -1,6 +1,6 @@
 package com.example.zeyin.algorithm.sortAlg;
 
-import com.example.zeyin.util.MethodUtil;
+import com.example.zeyin.util.ExchangeUtil;
 
 /**
  * @Description: 选择排序
@@ -19,7 +19,7 @@ public class SelectionSort {
         for (int i = 0; i < len - 1; i++) {
             for (int j = i + 1; j < len; j++) {
                 if (nums[j] < nums[i]) {
-                    MethodUtil.exchange(i, j, nums);
+                    ExchangeUtil.exchange(i, j, nums);
                 }
             }
         }
