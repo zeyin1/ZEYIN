@@ -20,4 +20,11 @@ public class ProOfBigDecimalTest {
     public void test2(){
         ProOfBigDecimal.method2();
     }
+
+    @Test
+    public void test3(){
+        //正数向上取整（1.5->2），负数向上取整(-1.5->-1)
+      long res=  Math.round(-1.5);
+      System.out.println(res);
+    }
 }
