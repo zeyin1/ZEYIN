@@ -10,7 +10,7 @@ import org.apache.ibatis.annotations.Param;
  * @Modify:
  */
 @Mapper
-public interface TableMapper {
+public interface TableMapper extends CommonMapper {
     /**
      * @Description: 用一句话描述
      * 1、单个入参，可以省略@Param
