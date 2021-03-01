@@ -13,8 +13,8 @@ import org.springframework.boot.test.context.SpringBootTest;
 public class leetcode0811Test {
 
     @Test
-    public void test(){
-        int res=leetcode0811.waysToChange1(5);
+    public void test() {
+        int res = leetcode0811.waysToChange1(5);
         System.out.println(res);
     }
 }

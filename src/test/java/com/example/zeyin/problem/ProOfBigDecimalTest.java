@@ -13,18 +13,19 @@ import org.springframework.boot.test.context.SpringBootTest;
 public class ProOfBigDecimalTest {
 
     @Test
-    public void test1(){
+    public void test1() {
         ProOfBigDecimal.method1();
     }
+
     @Test
-    public void test2(){
+    public void test2() {
         ProOfBigDecimal.method2();
     }
 
     @Test
-    public void test3(){
+    public void test3() {
         //正数向上取整（1.5->2），负数向上取整(-1.5->-1)
-      long res=  Math.round(-1.5);
-      System.out.println(res);
+        long res = Math.round(-1.5);
+        System.out.println(res);
     }
 }

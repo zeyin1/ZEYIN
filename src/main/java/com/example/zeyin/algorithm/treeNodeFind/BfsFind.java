@@ -19,23 +19,24 @@ public class BfsFind {
      */
 
     private static List<TreeNode> list;
+
     public static void bfsFind(TreeNode root) {
-        if (root==null){
+        if (root == null) {
             return;
         }
 
-        Queue<TreeNode> queue=new ArrayDeque<>();
+        Queue<TreeNode> queue = new ArrayDeque<>();
         queue.add(root);
 
-        while (!queue.isEmpty()){
-            TreeNode node=queue.poll();
+        while (!queue.isEmpty()) {
+            TreeNode node = queue.poll();
             list.add(node);
 
-            if(node.left!=null){
+            if (node.left != null) {
                 queue.add(node.left);
             }
 
-            if (node.right!=null){
+            if (node.right != null) {
                 queue.add(node.right);
             }
 

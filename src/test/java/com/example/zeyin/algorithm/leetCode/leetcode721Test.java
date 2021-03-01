@@ -17,6 +17,6 @@ public class leetcode721Test {
 
     @Test
     public void test() {
-    //
+        //
     }
 }

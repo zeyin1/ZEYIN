@@ -40,6 +40,7 @@ public class leetcode547_01 {
     private void union(int[] parent, int index1, int index2) {
         parent[find(parent, index1)] = find(parent, index2);
     }
+
     //寻找源节点
     private int find(int[] parent, int index) {
         if (parent[index] != index) {

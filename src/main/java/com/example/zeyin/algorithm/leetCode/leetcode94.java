@@ -24,13 +24,13 @@ public class leetcode94 {
             return;
         }
 
-        if (root.left!=null){
+        if (root.left != null) {
             midFind(root.left);
         }
 
         res.add(root.val);
 
-        if (root.right!=null){
+        if (root.right != null) {
             midFind(root.right);
         }
     }

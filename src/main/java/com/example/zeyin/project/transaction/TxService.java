@@ -9,12 +9,12 @@ package com.example.zeyin.project.transaction;
 
 public interface TxService {
     /**
-    * @Description: todo 用一句话描述
-    * @Author: zeyin
-    * @Date: 2020/4/12 17:51
-    * @Modify:
-    * @Param: 
-    * @Return: 
-    */
+     * @Description: todo 用一句话描述
+     * @Author: zeyin
+     * @Date: 2020/4/12 17:51
+     * @Modify:
+     * @Param:
+     * @Return:
+     */
     void txServiceMethod();
 }

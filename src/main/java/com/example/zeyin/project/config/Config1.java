@@ -32,8 +32,8 @@ public class Config1 {
     @Value("${cnf.url}")
     private String url;
 
-    public String getUrlInfo(){
-        return "http://"+ip+":"+port+"/"+url;
+    public String getUrlInfo() {
+        return "http://" + ip + ":" + port + "/" + url;
     }
 
 }

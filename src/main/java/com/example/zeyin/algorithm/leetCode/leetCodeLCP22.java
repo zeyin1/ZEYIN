@@ -10,13 +10,13 @@ public class leetCodeLCP22 {
 
     public static int paintingPlan(int n, int k) {
 
-        if (k==n*n){
+        if (k == n * n) {
             return 1;
         }
 
-        int wCount =0;
-        for (int i=0;i<n;i++){
-            for (int j=0;j<n;j++){
+        int wCount = 0;
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < n; j++) {
                 if (i * n + (n - i) * j == k) {
                     wCount += sumC(n, i) * sumC(n, j);
                 }
@@ -25,14 +25,14 @@ public class leetCodeLCP22 {
         return wCount;
     }
 
-    private static   int sumC(int n,int m){
-        return recurrence(n)/(recurrence(m)*recurrence(n-m));
+    private static int sumC(int n, int m) {
+        return recurrence(n) / (recurrence(m) * recurrence(n - m));
     }
 
-    private static int recurrence(int n){
-        if(n<=1){
+    private static int recurrence(int n) {
+        if (n <= 1) {
             return 1;
         }
-        return n*recurrence(n-1);
+        return n * recurrence(n - 1);
     }
 }

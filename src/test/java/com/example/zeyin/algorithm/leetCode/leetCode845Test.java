@@ -14,8 +14,8 @@ public class leetCode845Test {
 
 
     @Test
-    public void test(){
-    int[] A={2,1,4,7,3,2,5};
-    assert leetCode845.longestMountain(A)==5;
+    public void test() {
+        int[] A = {2, 1, 4, 7, 3, 2, 5};
+        assert leetCode845.longestMountain(A) == 5;
     }
 }

@@ -22,8 +22,8 @@ public enum ErrorEnum {
     }
 
     public static ErrorEnum parse(String code) throws Exception {
-        for(ErrorEnum errorEnum:values()){
-            if(errorEnum.code.equals(code)){
+        for (ErrorEnum errorEnum : values()) {
+            if (errorEnum.code.equals(code)) {
                 return errorEnum;
             }
         }

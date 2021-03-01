@@ -11,17 +11,17 @@ import java.util.PriorityQueue;
 public class leetcode215 {
 
     public static int findKthLargest(int[] nums, int k) {
-        if (nums==null||nums.length<k){
+        if (nums == null || nums.length < k) {
             return Integer.MAX_VALUE;
         }
 
-        PriorityQueue<Integer> queue=new PriorityQueue<>(k);
-        for (int i=0;i<k;i++){
+        PriorityQueue<Integer> queue = new PriorityQueue<>(k);
+        for (int i = 0; i < k; i++) {
             queue.add(nums[i]);
         }
 
-        for (int i=k;i<nums.length;i++){
-            if (nums[i]>queue.peek()){
+        for (int i = k; i < nums.length; i++) {
+            if (nums[i] > queue.peek()) {
                 queue.poll();
                 queue.add(nums[i]);
             }

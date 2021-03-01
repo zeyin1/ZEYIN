@@ -9,12 +9,12 @@ package com.example.zeyin.problem;
 public class ProOfVolatile01 {
     volatile int i;
 
-    public void addI(){
+    public void addI() {
         i++;
     }
 
     public static void main(String[] args) throws InterruptedException {
-        final  ProOfVolatile01 proOfVolatile01 = new ProOfVolatile01();
+        final ProOfVolatile01 proOfVolatile01 = new ProOfVolatile01();
         for (int n = 0; n < 1000; n++) {
             new Thread(new Runnable() {
                 @Override

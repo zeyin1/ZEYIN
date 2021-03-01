@@ -13,9 +13,9 @@ import org.springframework.boot.test.context.SpringBootTest;
 public class leetCode3Test {
 
     @Test
-    public void test(){
-        String s=String.valueOf("abcabcbb");
-        int res=leetcode3.method(s);
+    public void test() {
+        String s = String.valueOf("abcabcbb");
+        int res = leetcode3.method(s);
         System.out.println(res);
     }
 }

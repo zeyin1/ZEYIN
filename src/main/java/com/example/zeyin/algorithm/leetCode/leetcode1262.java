@@ -16,7 +16,7 @@ public class leetcode1262 {
             int[] dp2 = new int[3];
 
             //余数（0，1，2）
-            for (int i = 0; i < 3; i ++) {
+            for (int i = 0; i < 3; i++) {
                 dp2[(i + num) % 3] = Math.max(dp[(i + num) % 3], dp[i] + num);
             }
 

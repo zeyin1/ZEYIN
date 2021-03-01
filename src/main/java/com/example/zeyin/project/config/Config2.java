@@ -28,7 +28,7 @@ public class Config2 {
      */
     private String url;
 
-    public String getUrlInfo(){
-        return "http://"+ip+":"+port+"/"+url;
+    public String getUrlInfo() {
+        return "http://" + ip + ":" + port + "/" + url;
     }
 }

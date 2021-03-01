@@ -67,8 +67,7 @@ public class ExceptionForLearn {
     }
 
     /**
-     * @Description:
-     * 只有在try里面是有System.exit(0)来退出JVM的情况下finally块中的代码才不会执行。否则finally块中的代码都会执行。
+     * @Description: 只有在try里面是有System.exit(0)来退出JVM的情况下finally块中的代码才不会执行。否则finally块中的代码都会执行。
      * 一般来讲finally里面不会写return或者是throw，如果写了，会覆盖掉try里面的return和throw。
      * @Author: zeyin
      * @Date: 2021/1/10 14:39

@@ -10,13 +10,13 @@ package com.example.zeyin.project.abst;
 public interface AbstService {
 
     /**
-    * @Description: todo 用一句话描述
-    * @Author: zeyin
-    * @Date: 2020/4/12 16:58
-    * @Modify:
-    * @Param:
-    * @Return:
-    */
+     * @Description: todo 用一句话描述
+     * @Author: zeyin
+     * @Date: 2020/4/12 16:58
+     * @Modify:
+     * @Param:
+     * @Return:
+     */
     void abstServiceMethod();
 
 }

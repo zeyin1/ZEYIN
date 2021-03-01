@@ -21,21 +21,21 @@ public class DataInfoQryController {
     private DataInfoQryService mDataInfoQryService;
 
     /**
-    * @Description: 查询数据库数据
-    * @Author: zeyin
-    * @Date: 2020/3/29 22:55
-    * @Modify:
-    * @Param:
-    * @Return:
-    */
+     * @Description: 查询数据库数据
+     * @Author: zeyin
+     * @Date: 2020/3/29 22:55
+     * @Modify:
+     * @Param:
+     * @Return:
+     */
     @RequestMapping("qryDataInfo")
     public RamMidStu qryDataInfo(String pStuNam) throws Exception {
-        if (StringUtils.isEmpty(pStuNam)){
+        if (StringUtils.isEmpty(pStuNam)) {
             throw new Exception(ErrorEnum.ERR001.getCode());
         }
 
-        RamMidStu wRamMidStu =mDataInfoQryService.qryDataInfo(pStuNam);
-        if (wRamMidStu ==null){
+        RamMidStu wRamMidStu = mDataInfoQryService.qryDataInfo(pStuNam);
+        if (wRamMidStu == null) {
             throw new Exception(ErrorEnum.ERR002.getCode());
         }
         return wRamMidStu;

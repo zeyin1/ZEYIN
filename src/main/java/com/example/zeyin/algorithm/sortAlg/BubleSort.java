@@ -11,6 +11,7 @@ import com.example.zeyin.util.ExchangeUtil;
 public class BubleSort {
     /**
      * 一个元素与之后的元素对比，然后交换位置
+     *
      * @param nums
      */
 

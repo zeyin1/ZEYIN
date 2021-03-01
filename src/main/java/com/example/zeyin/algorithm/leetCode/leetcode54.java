@@ -23,24 +23,24 @@ public class leetcode54 {
         while (up <= down && left <= right) {
             //横向
             for (int i = left; i <= right; i++) {
-                    res.add(matrix[up][i]);
+                res.add(matrix[up][i]);
             }
             up++;
 
             //竖向
-            for (int i=up;i<=down;i++){
+            for (int i = up; i <= down; i++) {
                 res.add(matrix[i][right]);
             }
             right--;
 
             //负横向
-            for (int i=right;i>=left;i--){
+            for (int i = right; i >= left; i--) {
                 res.add(matrix[down][i]);
             }
             down--;
 
             //负竖向
-            for (int i=down;i>=up;i--){
+            for (int i = down; i >= up; i--) {
                 res.add(matrix[i][left]);
             }
             left++;

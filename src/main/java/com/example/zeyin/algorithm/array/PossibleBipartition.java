@@ -133,7 +133,7 @@ public class PossibleBipartition {
         for (int n : nums) {
             int[] dp2 = new int[3];
 
-            for (int i = 0; i < 3; i ++) {
+            for (int i = 0; i < 3; i++) {
                 dp2[(i + n) % 3] = Math.max(dp[(i + n) % 3], dp[i] + n);
             }
 
@@ -143,32 +143,32 @@ public class PossibleBipartition {
     }
 
     public int characterReplacement(String s, int k) {
-        int []map=new int[26];
+        int[] map = new int[26];
         // 窗口内出现次数最多的字符的出现次数
-        int maxCount=0;
-        char []a=s.toCharArray();
-        int left=0,right=0;
-        int res=0;
+        int maxCount = 0;
+        char[] a = s.toCharArray();
+        int left = 0, right = 0;
+        int res = 0;
         // right一直向右扩充
-        for(right=0;right<a.length;right++){
-            map[a[right]-'A']++;
+        for (right = 0; right < a.length; right++) {
+            map[a[right] - 'A']++;
             // 每扩充一格 就重新计算maxCount
-            maxCount=Math.max(maxCount,map[a[right]-'A']);
+            maxCount = Math.max(maxCount, map[a[right] - 'A']);
 
             // 重复字符可以填满整个窗口,更新结果。
-            if(right-left+1-maxCount<=k){
-                res=Math.max(right-left+1,res);
+            if (right - left + 1 - maxCount <= k) {
+                res = Math.max(right - left + 1, res);
             }
             // 窗口大小 减去 重复字符出现次数>k ，说明重复字符不能填满整个窗口
             else {
-                map[a[left]-'A']--;
+                map[a[left] - 'A']--;
                 left++;
             }
         }
         return res;
     }
 
-    public List<String> generateAbbreviations(String word){
+    public List<String> generateAbbreviations(String word) {
         List<String> ans = new ArrayList<String>();
         backtrack(ans, new StringBuilder(), word, 0, 0);
         return ans;
@@ -176,9 +176,9 @@ public class PossibleBipartition {
 
     // i is the current position
     // k is the count of consecutive abbreviated characters
-    private void backtrack(List<String> ans, StringBuilder builder, String word, int i, int k){
+    private void backtrack(List<String> ans, StringBuilder builder, String word, int i, int k) {
         int len = builder.length(); // keep the length of builder
-        if(i == word.length()){
+        if (i == word.length()) {
             if (k != 0) builder.append(k); // append the last k if non zero
             ans.add(builder.toString());
         } else {
@@ -192,9 +192,6 @@ public class PossibleBipartition {
         }
         builder.setLength(len); // reset builder to the original state
     }
-
-
-
 
 
 }

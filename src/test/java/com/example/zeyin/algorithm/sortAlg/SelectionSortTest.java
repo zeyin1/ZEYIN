@@ -13,8 +13,8 @@ import org.springframework.boot.test.context.SpringBootTest;
 public class SelectionSortTest {
 
     @Test
-    public void test(){
-        int[] nums=DataSource.returnNums();
+    public void test() {
+        int[] nums = DataSource.returnNums();
         SelectionSort.selectionSort(nums);
         DataSource.print(nums);
     }

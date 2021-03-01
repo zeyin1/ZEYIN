@@ -11,7 +11,7 @@ import java.util.List;
  */
 public class ProOfList {
 
-    public void methodOfList(){
+    public void methodOfList() {
         List list = new ArrayList();
         ArrayList arrayList = new ArrayList();
         //list.trimToSize(); //错误，没有该方法。

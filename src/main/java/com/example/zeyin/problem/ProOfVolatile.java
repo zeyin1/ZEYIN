@@ -7,20 +7,20 @@ package com.example.zeyin.problem;
  * @Modify:
  */
 public class ProOfVolatile {
-    int a=1;
-    int b=2;
+    int a = 1;
+    int b = 2;
 
-    public void change(){
-        a=3;
-        b=a;
+    public void change() {
+        a = 3;
+        b = a;
     }
 
-    public void print(){
-        System.out.println("b值为："+b+",  a值为："+a);
+    public void print() {
+        System.out.println("b值为：" + b + ",  a值为：" + a);
     }
 
-    public static  void method(){
-        while (true){
+    public static void method() {
+        while (true) {
             final ProOfVolatile proOfVolatile = new ProOfVolatile();
             new Thread(new Runnable() {
                 @Override
@@ -49,7 +49,7 @@ public class ProOfVolatile {
         }
     }
 
-    public static void main(String[] args){
+    public static void main(String[] args) {
         method();
     }
 }

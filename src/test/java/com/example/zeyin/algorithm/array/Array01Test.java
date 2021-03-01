@@ -23,7 +23,7 @@ public class Array01Test {
      */
     @Test
     public void arrayTest() {
-        int[] array1={1,2,3,4,5,7,6,4,2,2};
+        int[] array1 = {1, 2, 3, 4, 5, 7, 6, 4, 2, 2};
         System.out.println("----测试1-----------");
         System.out.println(Array01.duplicate01(array1));
         System.out.println("----测试2-----------");
@@ -31,16 +31,16 @@ public class Array01Test {
     }
 
     /**
-    * @Description: 找到有序数组的第一个重复元素，并输出
-    * @Author: zeyin
-    * @Date: 2020/4/5 17:16
-    * @Modify:
-    * @Param:
-    * @Return:
-    */
+     * @Description: 找到有序数组的第一个重复元素，并输出
+     * @Author: zeyin
+     * @Date: 2020/4/5 17:16
+     * @Modify:
+     * @Param:
+     * @Return:
+     */
     @Test
-    public void arrayTest02(){
-        int[] array1={1,2,3,4,4,5,7,8};
+    public void arrayTest02() {
+        int[] array1 = {1, 2, 3, 4, 4, 5, 7, 8};
         System.out.println(Array01.removeDuplicates(array1));
     }
 }

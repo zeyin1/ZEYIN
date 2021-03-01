@@ -25,29 +25,29 @@ public class leetcode143 {
         ListNode secondNode = slow.next;
 
         //倒序
-        secondNode=reverse(secondNode);
+        secondNode = reverse(secondNode);
 
         //奇偶插入
-        ListNode firstNode=head;
-        while (secondNode!=null){
-            ListNode next=firstNode.next;
-            firstNode.next=secondNode;
+        ListNode firstNode = head;
+        while (secondNode != null) {
+            ListNode next = firstNode.next;
+            firstNode.next = secondNode;
 
-            secondNode=secondNode.next;
-            firstNode=firstNode.next;
-            firstNode.next=next;
-            firstNode=firstNode.next;
+            secondNode = secondNode.next;
+            firstNode = firstNode.next;
+            firstNode.next = next;
+            firstNode = firstNode.next;
         }
     }
 
-    private ListNode reverse(ListNode head){
-        ListNode preNode=null;
-        ListNode nextNode=null;
-        while (head!=null){
-            nextNode=head.next;
-            head.next=preNode;
-            preNode=head;
-            head=nextNode;
+    private ListNode reverse(ListNode head) {
+        ListNode preNode = null;
+        ListNode nextNode = null;
+        while (head != null) {
+            nextNode = head.next;
+            head.next = preNode;
+            preNode = head;
+            head = nextNode;
         }
         return preNode;
     }

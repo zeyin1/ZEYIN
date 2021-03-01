@@ -15,7 +15,7 @@ public class Abst1ServiceImpl implements AbstService {
     @Override
     public void abstServiceMethod() {
         System.out.println("创建抽象类对象");
-        Abst abst=new Abst() {
+        Abst abst = new Abst() {
             @Override
             public void abst() {
                 System.out.println("实现抽象类的抽象方法");

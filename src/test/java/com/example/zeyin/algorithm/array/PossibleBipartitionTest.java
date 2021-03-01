@@ -21,12 +21,12 @@ public class PossibleBipartitionTest {
     private PossibleBipartition mPossibleBipartition;
 
     @Test
-    public  void test1(){
-        int n=4;
-        int[][] nums={{1,2},
-                {1,3},
-                {2,4}};
-        mPossibleBipartition.possibleBipartition(n,nums);
+    public void test1() {
+        int n = 4;
+        int[][] nums = {{1, 2},
+                {1, 3},
+                {2, 4}};
+        mPossibleBipartition.possibleBipartition(n, nums);
     }
 
 }

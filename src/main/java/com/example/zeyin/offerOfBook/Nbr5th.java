@@ -8,12 +8,12 @@ package com.example.zeyin.offerOfBook;
  */
 public class Nbr5th {
 
-    public String replace(String str){
-        StringBuilder sb=new StringBuilder();
-        for (int i=str.length()-1;i>=0;i--){
-            if (str.charAt(i)==' '){
+    public String replace(String str) {
+        StringBuilder sb = new StringBuilder();
+        for (int i = str.length() - 1; i >= 0; i--) {
+            if (str.charAt(i) == ' ') {
                 sb.append("02%");
-            }else {
+            } else {
                 sb.append(str.charAt(i));
             }
         }

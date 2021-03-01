@@ -15,8 +15,8 @@ import java.util.List;
 public class leetcode39Test {
 
     @Test
-    public void test(){
-        int[] nums={2,3,6,7};
-        List<List<Integer>> res=leetcode39.combinationSum(nums,7);
+    public void test() {
+        int[] nums = {2, 3, 6, 7};
+        List<List<Integer>> res = leetcode39.combinationSum(nums, 7);
     }
 }

@@ -10,7 +10,7 @@ import java.math.BigDecimal;
  */
 public class ProOfBigDecimal {
 
-    public static void method1(){
+    public static void method1() {
         System.out.println(0.05 + 0.01);
         System.out.println(1.0 - 0.42);
         System.out.println(4.015 * 100);
@@ -22,7 +22,7 @@ public class ProOfBigDecimal {
      * （2）想准确计算这个值，那么需要把double类型的参数转化为String类型的。
      * 并且使用BigDecimal(String)这个构造方法进行构造。去获取结果
      */
-    public static void method2(){
+    public static void method2() {
         //精度会丢失
         BigDecimal a = new BigDecimal(1.01);
         BigDecimal b = new BigDecimal(1.02);

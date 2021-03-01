@@ -13,7 +13,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 public class leetCodeLCP17Test {
 
     @Test
-    public void test(){
-        assert leetCodeLCP17.calculate("AB")==4;
+    public void test() {
+        assert leetCodeLCP17.calculate("AB") == 4;
     }
 }

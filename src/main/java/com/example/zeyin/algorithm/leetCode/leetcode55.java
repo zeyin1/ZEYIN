@@ -14,7 +14,7 @@ public class leetcode55 {
             if (i > reach) {
                 return false;
             }
-            reach =Math.max(i + nums[i], reach);
+            reach = Math.max(i + nums[i], reach);
         }
         return true;
     }

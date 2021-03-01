@@ -8,7 +8,7 @@ package com.example.zeyin.algorithm.leetCode;
  */
 public class leetcode1143 {
     public static int longestCommonSubsequence(String text1, String text2) {
-        if (text1==null||text2==null){
+        if (text1 == null || text2 == null) {
             return 0;
         }
 

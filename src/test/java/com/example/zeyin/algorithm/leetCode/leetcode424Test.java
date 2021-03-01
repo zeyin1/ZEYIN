@@ -13,11 +13,11 @@ import org.springframework.boot.test.context.SpringBootTest;
 public class leetcode424Test {
 
     @Test
-    public void test(){
-        String s="AABABBA";
-        int k=1;
+    public void test() {
+        String s = "AABABBA";
+        int k = 1;
 
-        int len=leetcode424.characterReplacement(s,k);
+        int len = leetcode424.characterReplacement(s, k);
 
         System.out.println(len);
 

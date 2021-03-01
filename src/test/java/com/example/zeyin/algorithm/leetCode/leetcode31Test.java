@@ -13,11 +13,11 @@ import org.springframework.boot.test.context.SpringBootTest;
 public class leetcode31Test {
 
     @Test
-    public void test(){
-        int[] nums={1,5,8,4,7};
+    public void test() {
+        int[] nums = {1, 5, 8, 4, 7};
         leetcode31.nextPermutation(nums);
-        for (int i=0;i<nums.length;i++){
-            System.out.print(nums[i]+" ");
+        for (int i = 0; i < nums.length; i++) {
+            System.out.print(nums[i] + " ");
         }
     }
 }

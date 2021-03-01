@@ -8,7 +8,7 @@ package com.example.zeyin.offerOfBook;
  */
 public class Nbr12th {
 
-    public boolean hasPath(){
+    public boolean hasPath() {
         return false;
     }
 

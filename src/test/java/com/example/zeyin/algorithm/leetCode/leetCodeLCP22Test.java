@@ -13,7 +13,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 public class leetCodeLCP22Test {
 
     @Test
-    public void test1(){
-        assert leetCodeLCP22.paintingPlan(2,2)==4;
+    public void test1() {
+        assert leetCodeLCP22.paintingPlan(2, 2) == 4;
     }
 }

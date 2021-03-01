@@ -17,27 +17,28 @@ public class ConfigServiceTest {
     private ConfigService configService;
 
     /**
-    * @Description: todo 用一句话描述
-    * @Author: zeyin
-    * @Date: 2020/4/12 12:07
-    * @Modify:
-    * @Param:
-    * @Return:
-    */
+     * @Description: todo 用一句话描述
+     * @Author: zeyin
+     * @Date: 2020/4/12 12:07
+     * @Modify:
+     * @Param:
+     * @Return:
+     */
     @Test
-    public void test1(){
-        System.out.println("输出结果："+configService.getUrlInfoByConfig1());
+    public void test1() {
+        System.out.println("输出结果：" + configService.getUrlInfoByConfig1());
     }
+
     /**
-    * @Description: todo 用一句话描述
-    * @Author: zeyin
-    * @Date: 2020/4/12 12:07
-    * @Modify:
-    * @Param:
-    * @Return:
-    */
+     * @Description: todo 用一句话描述
+     * @Author: zeyin
+     * @Date: 2020/4/12 12:07
+     * @Modify:
+     * @Param:
+     * @Return:
+     */
     @Test
-    public void test2(){
-        System.out.println("输出结果："+configService.getUrlInfoByConfig2());
+    public void test2() {
+        System.out.println("输出结果：" + configService.getUrlInfoByConfig2());
     }
 }

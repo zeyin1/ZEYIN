@@ -13,8 +13,8 @@ import org.springframework.boot.test.context.SpringBootTest;
 public class HeapSortTest {
 
     @Test
-    public void test(){
-        int[] nums=DataSource.returnNums();
+    public void test() {
+        int[] nums = DataSource.returnNums();
         HeapSort.heapSort(nums);
         DataSource.print(nums);
     }

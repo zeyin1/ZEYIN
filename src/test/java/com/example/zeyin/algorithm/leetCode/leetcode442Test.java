@@ -15,9 +15,9 @@ import java.util.List;
 public class leetcode442Test {
 
     @Test
-    public void test(){
-        int[] nums={4,3,2,7,8,2,3,1};
-        List<Integer> res=leetcode442.findDuplicates(nums);
+    public void test() {
+        int[] nums = {4, 3, 2, 7, 8, 2, 3, 1};
+        List<Integer> res = leetcode442.findDuplicates(nums);
         System.out.println(res.toString());
     }
 }

@@ -13,10 +13,10 @@ import org.springframework.boot.test.context.SpringBootTest;
 public class leetcode316Test {
 
     @Test
-    public void test1(){
-       String s = "bcabc";
-       String res=leetcode316.removeDuplicateLetters(s);
-       System.out.println(s);
+    public void test1() {
+        String s = "bcabc";
+        String res = leetcode316.removeDuplicateLetters(s);
+        System.out.println(s);
         System.out.println(res);
     }
 }

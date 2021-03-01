@@ -12,16 +12,18 @@ import java.util.List;
 public class leetcode386 {
 
     private ArrayList<Integer> res = new ArrayList<>();
+
     public List<Integer> lexicalOrder(int n) {
-        for (int i = 1; i < 10; i ++){
+        for (int i = 1; i < 10; i++) {
             dfs(n, i);
         }
         return res;
     }
-    private void dfs(int n, int cur){
+
+    private void dfs(int n, int cur) {
         if (cur > n) return;
         res.add(cur);
-        for (int i = 0; i < 10; i ++) {
+        for (int i = 0; i < 10; i++) {
             dfs(n, cur * 10 + i);
         }
     }

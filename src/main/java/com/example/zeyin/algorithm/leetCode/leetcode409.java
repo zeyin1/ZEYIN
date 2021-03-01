@@ -11,21 +11,21 @@ import java.util.Set;
  */
 public class leetcode409 {
     public int longestPalindrome(String s) {
-        Set<Character> hs=new HashSet<Character>();
-        int count=0;
+        Set<Character> hs = new HashSet<Character>();
+        int count = 0;
 
-        for(int i=0;i<s.length();i++) {
-            if(hs.contains(s.charAt(i))) {
+        for (int i = 0; i < s.length(); i++) {
+            if (hs.contains(s.charAt(i))) {
                 hs.remove(s.charAt(i));
                 count++;
-            }else {
+            } else {
                 hs.add(s.charAt(i));
             }
         }
-        if(!hs.isEmpty()) {
-            return count*2+1;
-        }else {
-            return count*2;
+        if (!hs.isEmpty()) {
+            return count * 2 + 1;
+        } else {
+            return count * 2;
         }
     }
 }

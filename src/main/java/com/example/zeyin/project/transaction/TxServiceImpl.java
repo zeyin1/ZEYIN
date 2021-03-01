@@ -13,13 +13,13 @@ import org.springframework.transaction.annotation.Transactional;
 @Service
 public class TxServiceImpl implements TxService {
     /**
-    * @Description: 用注解实现方法的独立子事务
-    * @Author: zeyin
-    * @Date: 2020/4/12 17:47
-    * @Modify:
-    * @Param:
-    * @Return:
-    */
+     * @Description: 用注解实现方法的独立子事务
+     * @Author: zeyin
+     * @Date: 2020/4/12 17:47
+     * @Modify:
+     * @Param:
+     * @Return:
+     */
     @Transactional(propagation = Propagation.REQUIRES_NEW)
     @Override
     public void txServiceMethod() {

@@ -11,6 +11,7 @@ public class MergeSort {
      * （1）切分数组成两个数组
      * （2）合并两个数组的值（类似于两个链表）,到一个新数组
      * （3）把新数组的元素复制到原数组的对应位置
+     *
      * @param nums
      * @param low
      * @param high

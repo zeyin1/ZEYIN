@@ -8,10 +8,10 @@ package com.example.zeyin.algorithm.leetCode;
  */
 public class leetcode10_03 {
     public int search(int[] arr, int target) {
-        int l =0;
+        int l = 0;
         int h = arr.length - 1;
-        while(l <= h) {
-            int mid = l + (h-l >> 1);
+        while (l <= h) {
+            int mid = l + (h - l >> 1);
 
             //大于等于目标值，往左边靠
             if (arr[mid] >= target) {

@@ -12,7 +12,7 @@ public enum SingletonDemo05 {
     ;
 
     //添加枚举方法
-    public void singletonDemo05(){
+    public void singletonDemo05() {
 
     }
 }

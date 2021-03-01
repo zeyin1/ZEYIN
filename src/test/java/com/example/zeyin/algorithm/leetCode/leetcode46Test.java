@@ -15,10 +15,10 @@ import java.util.List;
 public class leetcode46Test {
 
     @Test
-    public void test(){
-        int[] nums={1,2,3};
-        List<List<Integer>> res=leetcode46.permute(nums);
-        for (List<Integer> list:res){
+    public void test() {
+        int[] nums = {1, 2, 3};
+        List<List<Integer>> res = leetcode46.permute(nums);
+        for (List<Integer> list : res) {
             System.out.println(list.toString());
         }
     }

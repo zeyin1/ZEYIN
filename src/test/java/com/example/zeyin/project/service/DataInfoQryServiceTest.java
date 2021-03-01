@@ -22,17 +22,17 @@ public class DataInfoQryServiceTest {
     private RamMidStuMapper mRamMidStuMapper;
 
     /**
-    * @Description: 测试一
-    * @Author: zeyin
-    * @Date: 2020/4/1 20:55
-    * @Modify:
-    * @Param:
-    * @Return:
-    */
+     * @Description: 测试一
+     * @Author: zeyin
+     * @Date: 2020/4/1 20:55
+     * @Modify:
+     * @Param:
+     * @Return:
+     */
     @Test
-    public void test(){
-        String stuNam="张三";
-        RamMidStu ramMidStu =mDataInfoQryService.qryDataInfo(stuNam);
+    public void test() {
+        String stuNam = "张三";
+        RamMidStu ramMidStu = mDataInfoQryService.qryDataInfo(stuNam);
         System.out.println(ramMidStu);
     }
 }

@@ -13,9 +13,9 @@ import org.springframework.boot.test.context.SpringBootTest;
 public class leetCode1564Test {
 
     @Test
-    public void test(){
-        int[] boxes={1,2,3};
-        int[] wareHouse={1,2,3,4};
-        assert leetCode1564.maxBoxesInWarehouse(boxes,wareHouse)==1;
+    public void test() {
+        int[] boxes = {1, 2, 3};
+        int[] wareHouse = {1, 2, 3, 4};
+        assert leetCode1564.maxBoxesInWarehouse(boxes, wareHouse) == 1;
     }
 }

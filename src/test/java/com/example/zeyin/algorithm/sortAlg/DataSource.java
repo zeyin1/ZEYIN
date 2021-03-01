@@ -15,7 +15,7 @@ public class DataSource {
         return nums;
     }
 
-    public static void print(int[] nums){
+    public static void print(int[] nums) {
         System.out.println(Arrays.toString(nums));
     }
 }

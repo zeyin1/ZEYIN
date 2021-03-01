@@ -23,9 +23,9 @@ public class leetcode974Test {
     }
 
     @Test
-    public void  test1(){
-        int[] nums={1,3,5,7,8,25,4,20};
-        List<Integer> res= 平衡点.Method(nums);
+    public void test1() {
+        int[] nums = {1, 3, 5, 7, 8, 25, 4, 20};
+        List<Integer> res = 平衡点.Method(nums);
         return;
     }
 }

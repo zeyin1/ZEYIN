@@ -10,21 +10,21 @@ import java.util.HashMap;
  */
 public class Nbr3th {
 
-    public boolean duplicate(int[] nums,int len,int[] duplication){
+    public boolean duplicate(int[] nums, int len, int[] duplication) {
 
-        if (nums==null||nums.length==0){
+        if (nums == null || nums.length == 0) {
             return false;
         }
 
-        boolean flag=false;
-        HashMap<Integer,Integer> map=new HashMap<>();
-        for (int num:nums){
-            if (map.containsKey(num)){
-                flag=true;
-                duplication[0]=num;
+        boolean flag = false;
+        HashMap<Integer, Integer> map = new HashMap<>();
+        for (int num : nums) {
+            if (map.containsKey(num)) {
+                flag = true;
+                duplication[0] = num;
                 break;
             }
-            map.put(num,0);
+            map.put(num, 0);
         }
         return flag;
     }

@@ -57,7 +57,7 @@ public class wr {
         if (nums[0][0] == 2) {
             Arrays.fill(nums[0], 0);
             for (int i = 1; i < nums.length; i++) {
-                if (nums[i][0]==2){
+                if (nums[i][0] == 2) {
                     nums[i][0] = 0;
                 }
             }

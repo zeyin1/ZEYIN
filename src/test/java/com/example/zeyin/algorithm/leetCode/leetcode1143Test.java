@@ -13,10 +13,10 @@ import org.springframework.boot.test.context.SpringBootTest;
 public class leetcode1143Test {
 
     @Test
-    public void  test1(){
-        String str1="abcde";
-        String str2="ace";
-        int res=leetcode1143.longestCommonSubsequence(str1,str2);
+    public void test1() {
+        String str1 = "abcde";
+        String str2 = "ace";
+        int res = leetcode1143.longestCommonSubsequence(str1, str2);
         System.out.println(str1);
         System.out.println(str2);
         System.out.println(res);

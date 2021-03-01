@@ -21,11 +21,11 @@ public class SpringApplicationContextHelper implements ApplicationContextAware {
     @Override
     public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
         log.info("通过上下文加载bean的方法，注入成功");
-        context=applicationContext;
+        context = applicationContext;
     }
 
-    public static <T> T getBean(Class<T> tClass){
-        if(null==context){
+    public static <T> T getBean(Class<T> tClass) {
+        if (null == context) {
             return null;
         }
         return context.getBean(tClass);

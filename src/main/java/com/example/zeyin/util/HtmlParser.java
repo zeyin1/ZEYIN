@@ -9,5 +9,5 @@ import java.util.List;
  * @Modify:
  */
 public interface HtmlParser {
-     List<String> getUrls(String url);
+    List<String> getUrls(String url);
 }

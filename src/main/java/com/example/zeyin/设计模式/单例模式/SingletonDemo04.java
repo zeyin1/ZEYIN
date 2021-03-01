@@ -10,14 +10,15 @@ package com.example.zeyin.设计模式.单例模式;
 public class SingletonDemo04 {
 
     //静态内部类
-    private static class singletonDemoInner04{
-        private static final SingletonDemo04 singletonDemo04=new SingletonDemo04();
+    private static class singletonDemoInner04 {
+        private static final SingletonDemo04 singletonDemo04 = new SingletonDemo04();
     }
 
     //构造器私有化
-    private SingletonDemo04(){}
+    private SingletonDemo04() {
+    }
 
-    public static SingletonDemo04 getSingletonDemo03(){
+    public static SingletonDemo04 getSingletonDemo03() {
         return singletonDemoInner04.singletonDemo04;
     }
 }

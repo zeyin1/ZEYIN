@@ -7,7 +7,7 @@ import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-@MapperScan(basePackages = "com.example.zeyin.zeyin",annotationClass = Mapper.class)
+@MapperScan(basePackages = "com.example.zeyin.zeyin", annotationClass = Mapper.class)
 public class ZeyinApplication {
 
     public static void main(String[] args) {

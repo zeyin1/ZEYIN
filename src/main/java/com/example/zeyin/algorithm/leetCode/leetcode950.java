@@ -20,9 +20,9 @@ public class leetcode950 {
 
         int[] ans = new int[N];
         Arrays.sort(deck);
-        for (int card: deck) {
+        for (int card : deck) {
             ans[index.pollFirst()] = card;
-            if (!index.isEmpty()){
+            if (!index.isEmpty()) {
                 //把队列首位的元素放入队尾
                 index.add(index.pollFirst());
             }

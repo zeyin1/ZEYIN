@@ -14,12 +14,12 @@ import java.util.List;
 public class Nbr6th {
 
     //递归
-    public List<Integer> print(ListNode head){
-        List<Integer> res=new ArrayList<>();
+    public List<Integer> print(ListNode head) {
+        List<Integer> res = new ArrayList<>();
 
-        if (head!=null){
-            if (head.next!=null){
-                res=print(head.next);
+        if (head != null) {
+            if (head.next != null) {
+                res = print(head.next);
             }
             res.add(head.val);
         }

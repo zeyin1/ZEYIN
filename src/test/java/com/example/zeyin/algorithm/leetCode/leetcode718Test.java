@@ -13,10 +13,10 @@ import org.springframework.boot.test.context.SpringBootTest;
 public class leetcode718Test {
 
     @Test
-    public void test(){
-        int[] nums1={1,2,3,2,1};
-        int[] nums2={3,2,1,4,7};
-        int res=leetcode718.findLength(nums1,nums2);
+    public void test() {
+        int[] nums1 = {1, 2, 3, 2, 1};
+        int[] nums2 = {3, 2, 1, 4, 7};
+        int res = leetcode718.findLength(nums1, nums2);
         System.out.println(res);
     }
 }

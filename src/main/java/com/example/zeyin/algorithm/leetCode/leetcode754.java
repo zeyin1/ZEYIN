@@ -8,11 +8,11 @@ package com.example.zeyin.algorithm.leetCode;
  */
 public class leetcode754 {
     public int reachNumber(int target) {
-        target=Math.abs(target);
-        int maxPos=0;
-        int steps=1;
-        while (target>maxPos||(maxPos-target)%2!=0)
-            maxPos+=steps++;
-        return steps-1;
+        target = Math.abs(target);
+        int maxPos = 0;
+        int steps = 1;
+        while (target > maxPos || (maxPos - target) % 2 != 0)
+            maxPos += steps++;
+        return steps - 1;
     }
 }

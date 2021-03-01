@@ -17,15 +17,15 @@ public class TxServicetest {
     private TxService txService;
 
     /**
-    * @Description: todo 用一句话描述
-    * @Author: zeyin
-    * @Date: 2020/4/12 17:50
-    * @Modify:
-    * @Param:
-    * @Return:
-    */
+     * @Description: todo 用一句话描述
+     * @Author: zeyin
+     * @Date: 2020/4/12 17:50
+     * @Modify:
+     * @Param:
+     * @Return:
+     */
     @Test
-    public void test1(){
-       // txService.txServiceMethod();
+    public void test1() {
+        // txService.txServiceMethod();
     }
 }

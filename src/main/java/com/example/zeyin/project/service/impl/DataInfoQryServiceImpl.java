@@ -17,14 +17,15 @@ public class DataInfoQryServiceImpl implements DataInfoQryService {
 
     @Autowired
     private RamMidStuMapper mRamMidStuMapper;
+
     /**
-    * @Description: 测试实现类
-    * @Author: zeyin
-    * @Date: 2020/3/29 23:05
-    * @Modify:
-    * @Param:
-    * @Return:
-    */
+     * @Description: 测试实现类
+     * @Author: zeyin
+     * @Date: 2020/3/29 23:05
+     * @Modify:
+     * @Param:
+     * @Return:
+     */
     @Override
     public RamMidStu qryDataInfo(String pStuNam) {
         return mRamMidStuMapper.getRamMidStuInfo(pStuNam);

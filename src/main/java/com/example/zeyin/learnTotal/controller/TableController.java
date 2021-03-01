@@ -18,7 +18,7 @@ public class TableController {
     private TableService tableService;
 
     @PostMapping("aaa/bbb")
-    public void chkController(){
+    public void chkController() {
         tableService.chkTable();
     }
 }

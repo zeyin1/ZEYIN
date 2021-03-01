@@ -13,9 +13,9 @@ import org.springframework.boot.test.context.SpringBootTest;
 public class leetcode950Test {
 
     @Test
-    public void test(){
-        int[] nums={17,13,11,2,3,5};
-        int[] res=leetcode950.deckRevealedIncreasing(nums);
+    public void test() {
+        int[] nums = {17, 13, 11, 2, 3, 5};
+        int[] res = leetcode950.deckRevealedIncreasing(nums);
         return;
     }
 }

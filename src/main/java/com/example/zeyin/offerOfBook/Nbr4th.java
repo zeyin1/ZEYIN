@@ -13,19 +13,19 @@ public class Nbr4th {
      * @Author: zeyin
      * @Date: 2020/12/13 14:03
      */
-    public boolean find(int target,int[][] nums){
-        if (nums==null||nums.length==0){
+    public boolean find(int target, int[][] nums) {
+        if (nums == null || nums.length == 0) {
             return false;
         }
 
-        int i=0;
-        int j=nums[0].length-1;
-        while (i<nums.length&&j>=0){
-            if (nums[i][j]==target){
+        int i = 0;
+        int j = nums[0].length - 1;
+        while (i < nums.length && j >= 0) {
+            if (nums[i][j] == target) {
                 return true;
-            }else if (nums[i][j]>target){
+            } else if (nums[i][j] > target) {
                 j--;
-            }else {
+            } else {
                 i++;
             }
         }

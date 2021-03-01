@@ -13,10 +13,10 @@ import org.springframework.boot.test.context.SpringBootTest;
 public class leetcode777Test {
 
     @Test
-    public void test(){
-        String s1="RXXLRXRXL";
-        String s2="XRLXXRRLX";
-        boolean flg=leetcode777.canTransform(s1,s2);
+    public void test() {
+        String s1 = "RXXLRXRXL";
+        String s2 = "XRLXXRRLX";
+        boolean flg = leetcode777.canTransform(s1, s2);
         System.out.println(flg);
     }
 }

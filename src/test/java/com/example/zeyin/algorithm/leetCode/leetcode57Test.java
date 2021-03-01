@@ -14,8 +14,8 @@ public class leetcode57Test {
 
     @Test
     public void test() {
-        int[][] intervals={{1,3},{6,9}};
-        int[] newInterval={2,5};
-        int[][] res=leetcode57.insert(intervals,newInterval);
+        int[][] intervals = {{1, 3}, {6, 9}};
+        int[] newInterval = {2, 5};
+        int[][] res = leetcode57.insert(intervals, newInterval);
     }
 }

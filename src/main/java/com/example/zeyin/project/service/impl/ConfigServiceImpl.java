@@ -16,13 +16,13 @@ import org.springframework.stereotype.Service;
 public class ConfigServiceImpl implements ConfigService {
 
     /**
-    * @Description: todo 用一句话描述
-    * @Author: zeyin
-    * @Date: 2020/4/12 12:06
-    * @Modify:
-    * @Param: 
-    * @Return: 
-    */
+     * @Description: todo 用一句话描述
+     * @Author: zeyin
+     * @Date: 2020/4/12 12:06
+     * @Modify:
+     * @Param:
+     * @Return:
+     */
     @Override
     public String getUrlInfoByConfig1() {
         return SpringApplicationContextHelper.getBean(Config1.class).getUrlInfo();
@@ -37,7 +37,7 @@ public class ConfigServiceImpl implements ConfigService {
      * @Return:
      */
     @Override
-    public String getUrlInfoByConfig2(){
+    public String getUrlInfoByConfig2() {
         return SpringApplicationContextHelper.getBean(Config2.class).getUrlInfo();
     }
 

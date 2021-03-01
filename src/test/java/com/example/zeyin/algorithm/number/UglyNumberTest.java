@@ -11,19 +11,19 @@ import org.springframework.boot.test.context.SpringBootTest;
  */
 @SpringBootTest
 public class UglyNumberTest {
-    
+
     /**
-    * @Description: 用空间换时间
-    * @Author: zeyin
-    * @Date: 2020/4/1 22:02
-    * @Modify:
-    * @Param: 
-    * @Return: 
-    */
+     * @Description: 用空间换时间
+     * @Author: zeyin
+     * @Date: 2020/4/1 22:02
+     * @Modify:
+     * @Param:
+     * @Return:
+     */
 
     @Test
-    public void GetUglyNumber_SolutionTest(){
-        Integer wIndex=100;
+    public void GetUglyNumber_SolutionTest() {
+        Integer wIndex = 100;
         //System.out.println(UglyNumber.getUglyNumber_Solution(wIndex));
     }
 }

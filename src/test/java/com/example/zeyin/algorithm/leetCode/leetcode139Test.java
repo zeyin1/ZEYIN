@@ -16,12 +16,12 @@ import java.util.List;
 public class leetcode139Test {
 
     @Test
-    public void test(){
-        String s=String.valueOf("leetcode");
-        List<String> word=new ArrayList<>();
+    public void test() {
+        String s = String.valueOf("leetcode");
+        List<String> word = new ArrayList<>();
         word.add("leet");
         word.add("code");
-        boolean res=leetcode139.wordBreak(s,word);
+        boolean res = leetcode139.wordBreak(s, word);
         System.out.println(res);
     }
 }

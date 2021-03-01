@@ -13,7 +13,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 public class SheelSortTest {
 
     @Test
-    public void test(){
+    public void test() {
         int[] nums = DataSource.returnNums();
         SheelSort.sheelSort(nums);
         DataSource.print(nums);

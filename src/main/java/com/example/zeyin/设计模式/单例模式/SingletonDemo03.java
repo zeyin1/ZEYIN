@@ -13,15 +13,16 @@ public class SingletonDemo03 {
     private static SingletonDemo03 singletonDemo03;
 
     //构造器私有化
-    private SingletonDemo03(){}
+    private SingletonDemo03() {
+    }
 
     //方法同步，使用synchronized模块
-    public static SingletonDemo03 getSingletonDemo03(){
-        if(singletonDemo03==null){
+    public static SingletonDemo03 getSingletonDemo03() {
+        if (singletonDemo03 == null) {
             //锁住该对象
-            synchronized (SingletonDemo01.class){
-                if(singletonDemo03==null){
-                    singletonDemo03=new SingletonDemo03();
+            synchronized (SingletonDemo01.class) {
+                if (singletonDemo03 == null) {
+                    singletonDemo03 = new SingletonDemo03();
                 }
             }
         }

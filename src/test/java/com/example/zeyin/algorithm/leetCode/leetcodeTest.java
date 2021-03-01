@@ -14,7 +14,7 @@ public class leetcodeTest {
 
     @Test
     public void test() {
-        int[] nums = {1, 4, 4, 2, 2, 3,3};
+        int[] nums = {1, 4, 4, 2, 2, 3, 3};
         int[] res = leetcode347.topKFrequent(nums, 2);
         for (int num : res) {
             System.out.print(num + " ");

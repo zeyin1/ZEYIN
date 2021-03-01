@@ -13,7 +13,6 @@ public class leetcodeX_秋叶收藏集 {
      * j=0,f(i,j)=f(i-1,0)+isYellow(i);
      * j=1,f(i,j)=Math.min(f(i01,0),f(i-1,1))+isRed(i);
      * j=3,f(i,j)=Math.min(f(i-1,1),f(i-1,2))+isYellow(i);
-     *
      */
     public int minimumOperations(String leaves) {
         int len = leaves.length();

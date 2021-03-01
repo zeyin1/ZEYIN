@@ -14,25 +14,26 @@ import java.util.List;
 public class leetcode114 {
 
     //前序遍历，递归
-    private List<TreeNode> list=new ArrayList<>();
+    private List<TreeNode> list = new ArrayList<>();
+
     public void flatten(TreeNode root) {
-        if (root==null){
+        if (root == null) {
             return;
         }
         preOrder(root);
 
         //构建新的链表
-        for (int i=1;i<list.size();i++){
-            TreeNode preNode=list.get(i-1);
-            TreeNode curNode=list.get(i);
+        for (int i = 1; i < list.size(); i++) {
+            TreeNode preNode = list.get(i - 1);
+            TreeNode curNode = list.get(i);
 
-            preNode.left=null;
-            preNode.right=curNode;
+            preNode.left = null;
+            preNode.right = curNode;
         }
     }
 
-    private void preOrder(TreeNode root){
-        if (root==null){
+    private void preOrder(TreeNode root) {
+        if (root == null) {
             return;
         }
 
@@ -44,21 +45,21 @@ public class leetcode114 {
 
     //方法2
     public void flatten1(TreeNode root) {
-        TreeNode curNode=root;
-        while (curNode!=null){
-            if (curNode.left!=null){
+        TreeNode curNode = root;
+        while (curNode != null) {
+            if (curNode.left != null) {
 
-            TreeNode nextNode=curNode.left;
-            TreeNode preNode=nextNode;
-            while (preNode.right!=null){
-                preNode=preNode.right;
-            }
+                TreeNode nextNode = curNode.left;
+                TreeNode preNode = nextNode;
+                while (preNode.right != null) {
+                    preNode = preNode.right;
+                }
 
-            preNode.right=curNode.right;
-            curNode.left=null;
-            curNode.right=nextNode;
+                preNode.right = curNode.right;
+                curNode.left = null;
+                curNode.right = nextNode;
             }
-            curNode=curNode.right;
+            curNode = curNode.right;
         }
     }
 }

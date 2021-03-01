@@ -11,12 +11,12 @@ import com.example.zeyin.project.pojo.RamMidStu;
 
 public interface DataInfoQryService {
     /**
-    * @Description: 测试Service
-    * @Author: zeyin
-    * @Date: 2020/3/29 23:04
-    * @Modify:
-    * @Param:
-    * @Return:
-    */
+     * @Description: 测试Service
+     * @Author: zeyin
+     * @Date: 2020/3/29 23:04
+     * @Modify:
+     * @Param:
+     * @Return:
+     */
     RamMidStu qryDataInfo(String pStuNam);
 }

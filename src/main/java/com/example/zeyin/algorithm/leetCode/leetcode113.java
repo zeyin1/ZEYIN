@@ -15,30 +15,30 @@ import java.util.List;
  */
 public class leetcode113 {
 
-    private List<List<Integer>> res=new ArrayList<>();
+    private List<List<Integer>> res = new ArrayList<>();
 
     public List<List<Integer>> pathSum(TreeNode root, int sum) {
-        Deque<Integer> path=new ArrayDeque<>();
-        pathSum(root,sum,path);
+        Deque<Integer> path = new ArrayDeque<>();
+        pathSum(root, sum, path);
         return res;
     }
 
-    private void pathSum(TreeNode root,int sum,Deque<Integer> path){
-        if (root==null){
+    private void pathSum(TreeNode root, int sum, Deque<Integer> path) {
+        if (root == null) {
             return;
         }
-        sum=sum-root.val;
+        sum = sum - root.val;
         path.addLast(root.val);
 
-        if (sum==0&&root.left==null&&root.right==null){
+        if (sum == 0 && root.left == null && root.right == null) {
             res.add(new ArrayList<>(path));
             path.removeLast();
             return;
         }
 
         //左右子树
-        pathSum(root.left,sum,path);
-        pathSum(root.right,sum,path);
+        pathSum(root.left, sum, path);
+        pathSum(root.right, sum, path);
         path.removeLast();
     }
 

@@ -12,6 +12,7 @@ import java.util.PriorityQueue;
 public class leetcode1714 {
     /**
      * 最小优先队列
+     *
      * @param arr
      * @param k
      * @return

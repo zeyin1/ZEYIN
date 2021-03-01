@@ -11,23 +11,23 @@ import java.util.Stack;
 public class leetcode456 {
     public boolean find132pattern(int[] nums) {
 
-        if(nums.length<3){
+        if (nums.length < 3) {
             return false;
         }
         int second = Integer.MIN_VALUE;
-        Stack<Integer> stack =new Stack<>();
-        stack.add(nums[nums.length-1]);
+        Stack<Integer> stack = new Stack<>();
+        stack.add(nums[nums.length - 1]);
 
         //从右到左，找到次大的元素
-        for(int i=nums.length-2;i>=0;i--){
+        for (int i = nums.length - 2; i >= 0; i--) {
 
             //较小元素（左侧）
-            if(nums[i]<second){
+            if (nums[i] < second) {
                 return true;
-            }else {
-                while (!stack.isEmpty()&&nums[i]>stack.peek()){
+            } else {
+                while (!stack.isEmpty() && nums[i] > stack.peek()) {
                     //次大元素
-                    second=Math.max(stack.pop(),second);
+                    second = Math.max(stack.pop(), second);
                 }
                 //最大元素
                 stack.push(nums[i]);

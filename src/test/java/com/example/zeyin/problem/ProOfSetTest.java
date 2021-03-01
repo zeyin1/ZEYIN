@@ -13,8 +13,8 @@ import org.springframework.boot.test.context.SpringBootTest;
 public class ProOfSetTest {
 
     @Test
-    public void test(){
-        ProOfSet proOfSet=new ProOfSet();
+    public void test() {
+        ProOfSet proOfSet = new ProOfSet();
         proOfSet.methodOfSet();
     }
 }

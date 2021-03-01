@@ -15,27 +15,28 @@ import java.util.Queue;
  */
 public class leetcode102 {
 
-    private static List<List<Integer>> res=new ArrayList<>();
+    private static List<List<Integer>> res = new ArrayList<>();
+
     public static List<List<Integer>> levelOrder(TreeNode root) {
-        if (root==null){
+        if (root == null) {
             return res;
         }
 
-        Queue<TreeNode> queue=new ArrayDeque<>();
+        Queue<TreeNode> queue = new ArrayDeque<>();
         queue.add(root);
 
         //层次循环
-        while (!queue.isEmpty()){
-            int len=queue.size();
-            List<Integer> list=new ArrayList<>();//单层元素
-            for (int i=0;i<len;i++){
-                TreeNode node=queue.poll();
+        while (!queue.isEmpty()) {
+            int len = queue.size();
+            List<Integer> list = new ArrayList<>();//单层元素
+            for (int i = 0; i < len; i++) {
+                TreeNode node = queue.poll();
                 list.add(node.val);
 
-                if (node.left!=null){
+                if (node.left != null) {
                     queue.add(root.left);
                 }
-                if (node.right!=null){
+                if (node.right != null) {
                     queue.add(node.right);
                 }
             }

@@ -17,17 +17,17 @@ public class leetcode1019 {
     //栈中存索引
     public static int[] nextLargerNodes(ListNode head) {
 
-        List<Integer> list=new ArrayList<>();
-        while (head!=null){
+        List<Integer> list = new ArrayList<>();
+        while (head != null) {
             list.add(head.val);
-            head=head.next;
+            head = head.next;
         }
 
-        int[] res=new int[list.size()];
-        Stack<Integer> stack=new Stack<>();
-        for (int i=0;i<list.size();i++){
-            while (!stack.isEmpty()&&list.get(stack.peek())<list.get(i)){
-                res[stack.peek()]=list.get(i);
+        int[] res = new int[list.size()];
+        Stack<Integer> stack = new Stack<>();
+        for (int i = 0; i < list.size(); i++) {
+            while (!stack.isEmpty() && list.get(stack.peek()) < list.get(i)) {
+                res[stack.peek()] = list.get(i);
                 stack.pop();
             }
             stack.push(i);

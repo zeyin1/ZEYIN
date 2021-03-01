@@ -49,12 +49,14 @@ public class MyThreadTest {
         myThread2.run();
         myThread2.run();
     }
+
     @Test
     public void myThreadTest3() {
         MyThread1 myThread1 = new MyThread1();
         myThread1.run();
         myThread1.run();
     }
+
     @Test
     public void myThreadTest4() {
         MyThread3 myThread3 = new MyThread3();
