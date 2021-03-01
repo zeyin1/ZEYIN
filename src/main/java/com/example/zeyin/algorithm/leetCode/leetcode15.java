@@ -11,6 +11,13 @@ import java.util.List;
  * @Modify:
  */
 public class leetcode15 {
+    /**
+     * 1、去重数值（首先第一个数去重，接着后两个数去重）
+     * 2、后两个数之和等于第一个数的相反数
+     *
+     * @param nums
+     * @return
+     */
 
     public static List<List<Integer>> threeSum(int[] nums) {
         List<List<Integer>> resList = new ArrayList<>();
