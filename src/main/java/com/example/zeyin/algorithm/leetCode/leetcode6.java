@@ -7,7 +7,7 @@ package com.example.zeyin.algorithm.leetCode;
  * @Modify:
  */
 public class leetcode6 {
-    public String convert(String s, int numRows) {
+    public static String convert(String s, int numRows) {
         if (s == null || s.length() == 0) {
             return s;
         }
