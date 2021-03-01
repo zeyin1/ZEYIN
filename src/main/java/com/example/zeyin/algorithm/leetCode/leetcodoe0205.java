@@ -8,7 +8,7 @@ import com.example.zeyin.util.ListNode;
  * @Date: 2020年11月29日 17:29
  * @Modify:
  */
-public class leetcdoe0205 {
+public class leetcodoe0205 {
     public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
         if (l1 == null) {
             return l2;
