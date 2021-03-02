@@ -1,12 +1,22 @@
 package com.example.zeyin.algorithm.leetCode;
 
 /**
- * @Description: 用一句话描述
+ * @Description: 搜索旋转排序数组
  * @Author: zeyin
  * @Date: 2020年11月21日 9:43
  * @Modify:
  */
 public class leetcode33 {
+    /**
+     * （1）先比较目标值与mid的值大小
+     *     1、相等，则返回索引
+     *     2、不相等
+     * （2）再判断mid的位置
+     *     1、在左侧数组的升序部分
+     *         目标值在l和mid的值之间，锁定区间，反之另外一个区间
+     *     2、在右侧数组的升序部分
+     *         目标值在mid和r的值之间，锁定区间，反之另外一个区间
+     */
 
     //递归方式实现
     private static int res1 = -1;
