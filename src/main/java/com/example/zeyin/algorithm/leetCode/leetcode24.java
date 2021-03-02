@@ -3,7 +3,7 @@ package com.example.zeyin.algorithm.leetCode;
 import com.example.zeyin.util.ListNode;
 
 /**
- * @Description: 用一句话描述
+ * @Description: 两两交换链表中的节点
  * @Author: zeyin
  * @Date: 2020年11月21日 14:18
  * @Modify:

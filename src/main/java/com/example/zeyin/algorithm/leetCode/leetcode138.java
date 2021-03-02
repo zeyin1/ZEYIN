@@ -1,6 +1,7 @@
 package com.example.zeyin.algorithm.leetCode;
 
-import javafx.scene.Node;
+
+import com.example.zeyin.util.Node;
 
 /**
  * @Description: 用一句话描述

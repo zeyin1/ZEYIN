@@ -3,7 +3,7 @@ package com.example.zeyin.algorithm.leetCode;
 import java.util.Arrays;
 
 /**
- * @Description: 用一句话描述
+ * @Description: 最接近的三数之和
  * @Author: zeyin
  * @Date: 2021年03月01日 11:21
  * @Modify:
