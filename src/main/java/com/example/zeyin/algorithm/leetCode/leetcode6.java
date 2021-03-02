@@ -1,7 +1,7 @@
 package com.example.zeyin.algorithm.leetCode;
 
 /**
- * @Description: 用一句话描述
+ * @Description: Z字形变换
  * @Author: zeyin
  * @Date: 2020年11月21日 19:27
  * @Modify:

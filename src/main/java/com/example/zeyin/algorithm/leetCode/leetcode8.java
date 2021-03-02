@@ -1,7 +1,7 @@
 package com.example.zeyin.algorithm.leetCode;
 
 /**
- * @Description: 用一句话描述
+ * @Description: 字符串转换整数
  * @Author: zeyin
  * @Date: 2020年11月21日 17:38
  * @Modify:
