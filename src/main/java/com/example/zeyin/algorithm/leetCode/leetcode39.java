@@ -30,6 +30,9 @@ import java.util.List;
 public class leetcode39 {
     /**
      * 回溯
+     * res存储最终结果
+     * list存储单个结果（临时链表，回溯处理）
+     *
      * @param candidates
      * @param target
      * @return
@@ -55,9 +58,12 @@ public class leetcode39 {
             return;
         }
 
+        //以i开始的元素作为头节点
         for (int i = start; i < nums.length && target >= nums[i]; i++) {
+            //存入
             list.add(nums[i]);
             backtrack(nums, target - nums[i], res, new ArrayList<Integer>(list), i);
+            //取出
             list.remove(list.size() - 1);
         }
     }

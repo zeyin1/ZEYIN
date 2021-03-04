@@ -12,11 +12,31 @@ import java.util.List;
  * @Modify:
  */
 public class leetcode46 {
+    /**
+     * @Description:
+     * 给定一个 没有重复 数字的序列，返回其所有可能的全排列。
+     *
+     * 输入: [1,2,3]
+     * 输出:
+     * [
+     *   [1,2,3],
+     *   [1,3,2],
+     *   [2,1,3],
+     *   [2,3,1],
+     *   [3,1,2],
+     *   [3,2,1]
+     * ]
+     *方法：深度优先搜索+回溯
+     *
+     * @Author: zeyin
+     * @Date: 2021/3/4 9:13
+     */
 
     private static List<List<Integer>> res = new ArrayList<>();
 
     public static List<List<Integer>> permute(int[] nums) {
         Deque<Integer> queue = new ArrayDeque<>();
+        //是否使用过的标记
         boolean[] used = new boolean[nums.length];
         dfs(nums, nums.length, 0, queue, used);
         return res;
@@ -24,7 +44,7 @@ public class leetcode46 {
 
     private static void dfs(int[] nums, int len, int depth, Deque<Integer> queue, boolean[] used) {
 
-        //需要的结果
+        //需要的结果（停止搜索）
         if (depth == len) {
             res.add(new ArrayList<>(queue));
             return;
