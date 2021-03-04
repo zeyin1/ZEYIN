@@ -11,22 +11,26 @@ package com.example.zeyin.algorithm.leetCode;
  *
  *  输入：m = 3, n = 7
  *  输出：28
+ *  方法：动态规划
+ *  dp(i,j)=dp(i-1,j)+dp((i,j-1)
  *
  * @Author: zeyin
  * @Date: 2020年11月24日 20:25
  * @Modify:
  */
 public class leetcode62 {
-    //todo .....
 
     public int uniquePaths(int m, int n) {
+
         int[][] nums = new int[m][n];
 
         for (int i = 0; i < m; i++) {
             for (int j = 0; j < n; j++) {
                 if (i == 0 || j == 0) {
+                    //左边界/上边界赋值
                     nums[i][j] = 1;
                 } else {
+                    //其他
                     nums[i][j] = nums[i - 1][j] + nums[i][j - 1];
                 }
             }
