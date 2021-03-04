@@ -1,12 +1,16 @@
 package com.example.zeyin.algorithm.leetCode;
 
 /**
- * @Description: 用一句话描述
+ * @Description:  不同的二叉搜索树
+ *
+ * 给定一个整数 n，求以 1 ... n 为节点组成的二叉搜索树有多少种？
+ *
  * @Author: zeyin
  * @Date: 2020年11月21日 20:05
  * @Modify:
  */
 public class leetcode96 {
+    //todo ...
     public int numTrees(int n) {
         if (n == 0 || n == 1) {
             return 1;
