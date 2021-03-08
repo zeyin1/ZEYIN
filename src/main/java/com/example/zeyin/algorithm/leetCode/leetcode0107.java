@@ -1,7 +1,7 @@
 package com.example.zeyin.algorithm.leetCode;
 
 /**
- * @Description: 用一句话描述
+ * @Description: 顺时针旋转90度
  * @Author: zeyin
  * @Date: 2021年02月25日 14:52
  * @Modify:
@@ -11,7 +11,7 @@ public class leetcode0107 {
      * 顺时针旋转90度
      * 1、水平翻转
      * 2、主对角线翻转
-     * <p>
+     *
      * 拓展
      * 逆时针旋转90度
      * 1、垂直翻转

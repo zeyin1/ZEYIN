@@ -5,7 +5,14 @@ import com.example.zeyin.util.TreeNode;
 import java.util.*;
 
 /**
- * @Description: 用一句话描述
+ * @Description: 二叉树的锯齿形层序遍历
+ *
+ *给定一个二叉树，返回其节点值的锯齿形层序遍历。（即先从左往右，再从右往左进行下一层遍历，以此类推，层与层之间交替进行）。
+ *
+ * 方法：
+ * 1、用一个大队列存储
+ * 2、单层用list存储，双层用stack存储
+ *
  * @Author: zeyin
  * @Date: 2020年11月21日 14:27
  * @Modify:
@@ -24,9 +31,9 @@ public class leetcode103 {
         while (!queue.isEmpty()) {
             int len = queue.size();
 
-            //右边到左边，用栈存储
+            //右边到左边，用栈
             Stack<Integer> stack = new Stack<>();
-            //左边到右边，用链表（方便放入结果中）
+            //左边到右边，用链表
             List<Integer> list = new ArrayList<>();
 
             //存储下一层的元素
