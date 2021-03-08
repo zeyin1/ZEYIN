@@ -2,7 +2,9 @@ package com.example.zeyin.algorithm.other;
 
 import com.example.zeyin.util.ListNode;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -126,5 +128,56 @@ public class ProblemOfPractice {
         map.put(24, "Y");
         map.put(25, "Z");
         return map;
+    }
+
+    /**
+     * @Description: 一个数组，有两个不同的数出现两次，其余数都出现两次
+     * @Author: zeyin
+     * @Date: 2021/3/8 11:02
+     */
+    public static List<Integer> method(int[] nums) {
+
+        List<Integer> resList = new ArrayList<>();
+
+        if (nums == null || nums.length == 0) {
+            return resList;
+        }
+
+        int tempNum = 0;
+        for (int num : nums) {
+            tempNum = tempNum ^ num;
+        }
+        int res = tempNum;
+
+        int index = 1;
+        while (tempNum > 0) {
+            //找到为1的位数
+            boolean flag = (tempNum & 1) > 0;
+            if (flag) {
+                break;
+            }
+            tempNum = tempNum / 2;
+            index++;
+        }
+
+        tempNum = 0;
+        for (int num : nums) {
+            if (kth(num, index)) {
+                tempNum = tempNum ^ num;
+            }
+        }
+        int res1 = tempNum;
+
+        int res2 = res ^ res1;
+        resList.add(res1);
+        resList.add(res2);
+        return resList;
+    }
+
+    private static boolean kth(int num, int index) {
+        while (index-- > 1) {
+            num = num / 2;
+        }
+        return (num & 1) > 0;
     }
 }
