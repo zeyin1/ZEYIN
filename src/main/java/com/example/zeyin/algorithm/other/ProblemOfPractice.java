@@ -152,8 +152,7 @@ public class ProblemOfPractice {
         int index = 1;
         while (tempNum > 0) {
             //找到为1的位数
-            boolean flag = (tempNum & 1) > 0;
-            if (flag) {
+            if (kth(tempNum, 1)) {
                 break;
             }
             tempNum = tempNum / 2;
@@ -174,10 +173,9 @@ public class ProblemOfPractice {
         return resList;
     }
 
+
     private static boolean kth(int num, int index) {
-        while (index-- > 1) {
-            num = num / 2;
-        }
+        num = num >> (index - 1);
         return (num & 1) > 0;
     }
 }
