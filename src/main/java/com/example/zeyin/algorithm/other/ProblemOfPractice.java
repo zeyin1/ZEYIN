@@ -178,4 +178,40 @@ public class ProblemOfPractice {
         num = num >> (index - 1);
         return (num & 1) > 0;
     }
+
+    /**
+     * @Description: 皇后互相攻击问题
+     * @Author: zeyin
+     * @Date: 2021/3/8 15:03
+     */
+    public static int method(int[][] arrays) {
+
+        //（x坐标，皇后个数）
+        Map<Integer, Integer> nodeMap = new HashMap<>();
+        //(x坐标，皇后对数)
+        Map<Integer, Integer> valMap = new HashMap<>();
+
+        for (int[] array : arrays) {
+            if (nodeMap.containsKey(array[0])) {
+                //计算对数
+                int val = valMap.get(array[0]) + nodeMap.get(array[0]);
+                valMap.put(array[0], val);
+                //计算皇后数
+                int node = nodeMap.get(array[0]) + 1;
+                nodeMap.put(array[0], node);
+            } else {
+                //计算对数
+                valMap.put(array[0], 0);
+                //计算皇后数
+                nodeMap.put(array[0], 1);
+            }
+        }
+
+        //整合对数结果
+        int resCount = 0;
+        for (Map.Entry<Integer, Integer> tempMap : valMap.entrySet()) {
+            resCount += tempMap.getValue();
+        }
+        return resCount;
+    }
 }

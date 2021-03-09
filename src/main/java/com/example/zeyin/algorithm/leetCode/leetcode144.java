@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * @Description: 用一句话描述
+ * @Description: 前序遍历
  * @Author: zeyin
  * @Date: 2020年11月21日 21:00
  * @Modify:

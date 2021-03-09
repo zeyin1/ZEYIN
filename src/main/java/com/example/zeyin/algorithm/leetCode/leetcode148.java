@@ -3,16 +3,22 @@ package com.example.zeyin.algorithm.leetCode;
 import com.example.zeyin.util.ListNode;
 
 /**
- * @Description: 用一句话描述
+ * @Description: 排序链表
+ *
+ * 给你链表的头结点 head ，请将其按 升序 排列并返回 排序后的链表 。
+ *
  * @Author: zeyin
  * @Date: 2020年11月21日 13:29
  * @Modify:
  */
 public class leetcode148 {
-    /**
-     * 归并方法，拆分成两个链表
-     */
 
+    /**
+     * 拆分、递归、合并。
+     * 1、把链表拆分为两个链表
+     * 2、拆分后，分别对两个链表进行递归操作
+     * 3、合并两个链表为一个链表
+     */
     public ListNode sortList(ListNode head) {
         if (head == null || head.next == null) {
             return head;
