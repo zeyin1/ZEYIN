@@ -1,7 +1,10 @@
 package com.example.zeyin.algorithm.leetCode;
 
 /**
- * @Description: 用一句话描述
+ * @Description:  最大正方形
+ *
+ * 在一个由 '0' 和 '1' 组成的二维矩阵内，找到只包含 '1' 的最大正方形，并返回其面积。
+ *
  * @Author: zeyin
  * @Date: 2020年11月21日 17:25
  * @Modify:

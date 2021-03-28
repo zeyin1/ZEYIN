@@ -1,14 +1,17 @@
 package com.example.zeyin.algorithm.leetCode;
 
 /**
- * @Description: 用一句话描述
+ * @Description:  长度最小的子数组
+ *
+ * 给定一个含有 n 个正整数的数组和一个正整数 target 。
+ * 找出该数组中满足其和 ≥ target 的长度最小的 连续子数组 
+ * [numsl, numsl+1, ..., numsr-1, numsr] ，并返回其长度。如果不存在符合条件的子数组，返回 0 。
+ *
  * @Author: zeyin
  * @Date: 2020年11月23日 23:04
  * @Modify:
  */
 public class leetcode209 {
-
-    //todo ....
 
     public int minSubArrayLen(int s, int[] nums) {
         int left = 0, right = -1;//right=0就包含了第一个元素
