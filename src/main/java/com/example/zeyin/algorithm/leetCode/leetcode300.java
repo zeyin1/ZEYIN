@@ -20,12 +20,15 @@ public class leetcode300 {
 
         int max = 0;
         for (int i = 0; i < nums.length; i++) {
+            //元素本身
             res[i] = 1;
             for (int j = 0; j < i; j++) {
                 if (nums[j] < nums[i]) {
-                    res[i] = Math.max(res[i], res[j] + 1);//可以不连续
+                    //本身，或者是res[j]+1长度，1代表i的元素（这样的作法不是连续）
+                    res[i] = Math.max(res[i], res[j] + 1);
                 }
             }
+            //标记结果集
             max = Math.max(max, res[i]);
         }
         return max;
